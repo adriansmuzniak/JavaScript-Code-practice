@@ -66,5 +66,40 @@ if (age > 14){
 } else {
   console.log("witaj " + name);
 }
-
 //------------------------------------
+
+var temp = 10;
+var resultsum = (9/5) * temp + 32;
+console.log(resultsum);
+
+//-----------------------------------
+
+var sumStringNumber = 1000 + "108";
+console.log(sumStringNumber);
+
+//----------------------------------
+
+var scoops = 5;
+while (scoops > 0){
+  document.write("kolejna gałka!<br>");
+  scoops = scoops-1;
+}
+document.write("życie bez lodów nie jest już takie same");
+
+//----------------------------------
+
+if (scoops >= 5) {
+  alert("jedz szybciej, lody sie zaraz roztopią!");
+} else if (scoops == 3) {
+  alert("Lody się kończą");
+} else if (scoops == 2) {
+  alert("Dwa!")
+} else if (scoops == 1) {
+  alert("Jeden!")
+} else if (scoops == 0) {
+  alert("I koniec");
+} else {
+  "Mamy jeszcze dużo lodów, przyjdź i skosztuj"
+}
+
+//----------------------------------
