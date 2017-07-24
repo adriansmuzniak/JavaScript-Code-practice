@@ -2,7 +2,7 @@
 
 setTimeout(wakeUpUser, 5000);
 function wakeUpUser(){
-  console.log("robimy stronkę?");
+  // console.log("robimy stronkę?");
 }
 
 // -----------------------------------
@@ -36,12 +36,35 @@ x = matrix[0][2] + matrix[2][1]
 //-------------------------------------
 var count = 10;
 while (count > 0) {
-  juggle();
+  setTimeout(juggle,2000);
   count = count - 1;
 }
-setTimeout(juggle,1000)
 function juggle(){
-  console.log("idzie!");
+  setTimeout(1000)
+  // console.log("idzie!");
+}
+//------------------------------------
+var dog = {name:"Burek", weight: 35};
+if (dog.weight > 30) {
+  console.log("HAU HAU");
+} else {
+  console.log("hau hau");
+}
+
+//------------------------------------
+
+var circleRadius = 30;
+var circleArea = Math.PI * (circleRadius * circleRadius);
+console.log(circleArea);
+
+//----------------------------------
+
+var age = 10;
+var name = "Olek";
+if (age > 14){
+  console.log("Przykro mi, ta strona jest tylko dla dzieci");
+} else {
+  console.log("witaj " + name);
 }
 
 //------------------------------------
