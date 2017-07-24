@@ -104,11 +104,11 @@ if (scoops >= 5) {
 
 //----------------------------------
 
-var i = 0;
-var name = "Józek";
-while (i < 2) {
-  document.write("<br>Sto lat, sto lat.<br>");
-  document.write("Niech żyje, żyje nam.<br>");
-  i++;
-}
-document.write("Niech żyje nam " + name + " nam!<br>");
+// var i = 0;
+// var name = "Józek";
+// while (i < 2) {
+//   document.write("<br>Sto lat, sto lat.<br>");
+//   document.write("Niech żyje, żyje nam.<br>");
+//   i++;
+// }
+// document.write("Niech żyje nam " + name + " nam!<br>");
