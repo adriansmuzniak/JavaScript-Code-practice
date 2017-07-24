@@ -84,7 +84,7 @@ while (scoops > 0){
   document.write("kolejna gałka!<br>");
   scoops = scoops-1;
 }
-document.write("życie bez lodów nie jest już takie same");
+document.write("życie bez lodów nie jest już takie same<br>");
 
 //----------------------------------
 
@@ -97,9 +97,18 @@ if (scoops >= 5) {
 } else if (scoops == 1) {
   alert("Jeden!")
 } else if (scoops == 0) {
-  alert("I koniec");
+  // alert("I koniec");
 } else {
   "Mamy jeszcze dużo lodów, przyjdź i skosztuj"
 }
 
 //----------------------------------
+
+var i = 0;
+var name = "Józek";
+while (i < 2) {
+  document.write("<br>Sto lat, sto lat.<br>");
+  document.write("Niech żyje, żyje nam.<br>");
+  i++;
+}
+document.write("Niech żyje nam " + name + " nam!<br>");
