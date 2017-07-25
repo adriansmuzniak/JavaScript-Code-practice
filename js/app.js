@@ -134,3 +134,8 @@ while (count > 0) {
 }
 
 //------------------------------------------------
+
+if (inStock == true && (inSale == true || price < 60 )) {
+  //to wygląda na świetny interes - kupuj!
+  alert("kupuj, kupuj, kupuj!")
+}

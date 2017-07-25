@@ -25,7 +25,9 @@ var isSunk = false;
           alert("TRAFIONY!!");
           if (hits == 3) {
             isSunk == true;
-            alert("Hej, zatopiłeś mój okręt!");9
+            confirm("Hej, zatopiłeś mój okręt!");
+            var stats = "Potrzebowałeś " + guesses + " ruchów, aby zatopić okręt. Twoja efektywność strzelecka wynosi: " + (3/guesses) + ".";
+            alert(stats);
           }
         } else if (guess == null || guess == false) {
           alert("Ej, podaj jakąś liczbę")
@@ -34,5 +36,3 @@ var isSunk = false;
         }
       }
   }
-  var stats = "Potrzebowałeś " + guesses + " ruchów, aby zatopić okręt. Twoja efektywność strzelecka wynosi: " + (3/guesses) + ".";
-  alert(stats);
