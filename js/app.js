@@ -104,11 +104,33 @@ if (scoops >= 5) {
 
 //----------------------------------
 
-// var i = 0;
-// var name = "Józek";
-// while (i < 2) {
-//   document.write("<br>Sto lat, sto lat.<br>");
-//   document.write("Niech żyje, żyje nam.<br>");
-//   i++;
-// }
-// document.write("Niech żyje nam " + name + " nam!<br>");
+var i = 0;
+var name = "Józek";
+while (i < 2) {
+  document.write("<br>Sto lat, sto lat.<br>");
+  document.write("Niech żyje, żyje nam.<br>");
+  i++;
+}
+document.write("Niech żyje nam " + name + " nam!<br>");
+
+//-----------------------------------------
+
+var word = "butelek";
+var count = 99;
+while (count > 0) {
+  console.log(count + " " + word + " piwa na ścianie");
+  console.log(count + " " + word + " piwa,");
+  console.log("Jedną weź i podaj w koło,");
+  count = count - 1;
+  if (count == 4 || count == 3 || count == 2 ) {
+    var word = "butelki"
+    // console.log(count + " " + word + " piwa na ścianie");
+  } else if (count == 1) {
+    var word = "butelka"
+  } else {
+    var word = "butelek";
+    console.log("nie ma już " + word + " piwa na ścianie");
+  }
+}
+
+//------------------------------------------------
