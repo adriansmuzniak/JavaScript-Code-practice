@@ -134,8 +134,36 @@ while (count > 0) {
 }
 
 //------------------------------------------------
-
+var inStock = true;
+var inSale = true;
 if (inStock == true && (inSale == true || price < 60 )) {
   //to wygląda na świetny interes - kupuj!
-  alert("kupuj, kupuj, kupuj!")
+  document.write("<br>kupuj, kupuj, kupuj!<br>")
 }
+
+//------------------------------------------------
+
+var temp = 81;
+var willRain = true;
+var humid = (temp > 80 && willRain == true);
+console.log(humid);
+
+var guess = 6;
+var isValid = (guess >= 0 && guess <= 6);
+console.log(isValid);
+
+var kB = 1287;
+var tooBig = (kB > 1000);
+var urgent = true;
+var sendFile = (urgent == true || tooBig == false);
+console.log(sendFile);
+
+var keyPressed = "N";
+var points = 142;
+var level;
+if (keyPressed == "Y" || (points > 100 && points < 200)) {
+  level = 2;
+} else {
+  level = 1;
+}
+console.log(level);
