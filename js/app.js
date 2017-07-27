@@ -275,3 +275,41 @@ function doIt(param, name) {
 var jakisTest = 10;
 var durneImię = "Tomek"
 doIt(jakisTest, durneImię);
+
+//----------------------------------------
+
+function dogYears(dogName, age) {
+  var years = age * 7;
+  console.log(dogName + " ma " + years + " lata." );
+}
+var dog = "Adolf";
+var dogYear = 11;
+dogYears(dog, dogYear);
+
+
+function makeTea(cups, tea) {
+  console.log("Parzę " + cups + " filiżanek herbaty " + tea + ".");
+}
+var guests = 5;
+makeTea(guests, "Earl Grey");
+
+
+function secret() {
+  console.log("Tajemnice bytu jest liczba 42");
+}
+secret();
+
+function speak(kind) {
+  var defaultSound = "";
+  if (kind == "pies") {
+    alert("Hau");
+  } else if (kind == "kot") {
+    alert("Miau");
+  } else {
+    alert(defaultSound);
+  }
+}
+var pet = prompt("Podaj rodzaj zwierzaka: ");
+speak(pet);
+
+//--------------------------------
