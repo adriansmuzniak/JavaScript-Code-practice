@@ -214,3 +214,24 @@ bark("Burek", 23);
 bark("Mops", 13);
 bark("Reksio", 53);
 bark("Saba", 17);
+bark("Skuter", -1); //"Skuter szczeka hau hau"
+bark("Dino", 0, 0); //brak błędu
+bark("Fido", "20"); //"Fido szczeka hau hau"
+bark("Saba", 10); //"Saba szczeka HAU HAU"
+bark("Agent", 21) //"Agent szczeka HAU HAU"
+
+//---------------------------------------------
+
+function whatShallIwear(temp){
+  if (temp < 15) {
+    console.log("ubierz kurtkę");
+  } else if (temp < 25) {
+    console.log("ubierz sweter");
+  } else {
+    console.log("ubierz T-shirt");
+  }
+}
+
+whatShallIwear(10);
+whatShallIwear(15);
+whatShallIwear(30);
