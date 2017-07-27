@@ -169,3 +169,48 @@ if (keyPressed == "Y" || (points > 100 && points < 200)) {
 console.log(level);
 
 //-------------------------------------------
+
+var dogName = "Burek";
+var dogWeight = 23;
+if (dogWeight > 20) {
+  console.log(dogName + " szczeka HAU HAU");
+} else {
+  console.log(dogName + " szczeka hau hau");
+}
+
+dogName = "Mops";
+dogWeight = 13;
+if (dogWeight > 20) {
+  console.log(dogName + " szczeka HAU HAU");
+} else {
+  console.log(dogName + " szczeka hau hau");
+}
+
+dogName = "Reksio";
+dogWeight = 53;
+if (dogWeight > 20) {
+  console.log(dogName + " szczeka HAU HAU");
+} else {
+  console.log(dogName + " szczeka hau hau");
+}
+
+dogName = "Saba";
+dogWeight = 17;
+if (dogWeight > 20) {
+  console.log(dogName + " szczeka HAU HAU");
+} else {
+  console.log(dogName + " szczeka hau hau");
+}
+
+function bark(name, weight) {
+  if (weight > 20) {
+    console.log(name + " szczeka HAU HAU");
+  } else {
+    console.log(name + " szczeka hau hau");
+  }
+}
+
+bark("Burek", 23);
+bark("Mops", 13);
+bark("Reksio", 53);
+bark("Saba", 17);
