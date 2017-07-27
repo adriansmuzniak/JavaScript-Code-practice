@@ -167,3 +167,5 @@ if (keyPressed == "Y" || (points > 100 && points < 200)) {
   level = 1;
 }
 console.log(level);
+
+//-------------------------------------------
