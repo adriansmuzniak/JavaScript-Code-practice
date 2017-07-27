@@ -235,3 +235,35 @@ function whatShallIwear(temp){
 whatShallIwear(10);
 whatShallIwear(15);
 whatShallIwear(30);
+
+//---------------------------------------
+
+saveMyProfile("Tomek", 1991, 3.81, false);
+function saveMyProfile(name, birthday, GPA, newuser){
+  if (birthday > 2004) {
+    //kod obsługi dziecka
+  }
+  //reszta kodu funkcji
+}
+// _____
+
+var student = "Krzysiu";
+var year = 1998;
+var GPA = 381/100;
+var status = "oczekujący";
+var isNewUser = (status == "nowy_użytkownik");
+saveMyProfile(student, year, GPA, isNewUser);
+saveMyProfile(student, year, 381/100, status == "nowy_użytkownik"); //również dopuszczalne
+
+//-----------------------------------------
+// PARAMETR A ARGUMENT
+
+function cook(degrees, mode, duration){
+  //ciało funkcji
+}
+// degrees, mode, duration - to są parametry funkcji
+
+cook(180.0, "pieczenie", 30);
+// 180, "pieczenie", 30 - to są argumenty przekazane do funkcji
+
+// Parametry funkcji definiujemy raz, ale do funkcji możemy przekazać różne argumenty!
