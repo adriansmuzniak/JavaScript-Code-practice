@@ -267,3 +267,11 @@ cook(180.0, "pieczenie", 30);
 // 180, "pieczenie", 30 - to są argumenty przekazane do funkcji
 
 // Parametry funkcji definiujemy raz, ale do funkcji możemy przekazać różne argumenty!
+
+function doIt(param, name) {
+  var jakistest2 = param/2;
+  console.log(jakistest2 + " " + name);
+}
+var jakisTest = 10;
+var durneImię = "Tomek"
+doIt(jakisTest, durneImię);
