@@ -383,3 +383,30 @@ console.log(userPoints);
 console.log(avatar);
 
 //---------------------------------
+
+function playerTurn(player, location) {
+  points = 0; //zmienna globalna!
+  if (location == 1) {
+    points = location + 100;
+  }
+  return points;
+}
+var total = playerTurn("Wilk", 1);
+// alert(total);
+
+//---------------------------------
+// Przesłonięcie zmiennej globalnej
+
+var beanCounter = 10;
+
+function getNumberOfItems(ordertype) {
+  var beanCounter = 3;
+  if (ordertype == "zamówienie") {
+    beanCounter = beanCounter * 8;
+  }
+  return beanCounter;
+}
+var someRes = getNumberOfItems("zamówienie");
+console.log(someRes);
+
+//-----------------------------------
