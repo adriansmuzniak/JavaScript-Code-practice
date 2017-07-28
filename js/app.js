@@ -291,25 +291,42 @@ function makeTea(cups, tea) {
   console.log("Parzę " + cups + " filiżanek herbaty " + tea + ".");
 }
 var guests = 5;
-makeTea(guests, "Earl Grey");
-
+makeTea(guests); //"Parzę 5 filiżanek herbaty undefinied"
+makeTea(guests, "Earl Grey", 8); //"ominięcie nadmiarowych argumentów"
 
 function secret() {
   console.log("Tajemnice bytu jest liczba 42");
 }
 secret();
 
-function speak(kind) {
-  var defaultSound = "";
-  if (kind == "pies") {
-    alert("Hau");
-  } else if (kind == "kot") {
-    alert("Miau");
-  } else {
-    alert(defaultSound);
-  }
-}
-var pet = prompt("Podaj rodzaj zwierzaka: ");
-speak(pet);
+// function speak(kind) {
+//   var defaultSound = "";
+//   if (kind == "pies") {
+//     alert("Hau");
+//   } else if (kind == "kot") {
+//     alert("Miau");
+//   } else {
+//     alert(defaultSound);
+//   }
+// }
+// var pet = prompt("Podaj rodzaj zwierzaka: ");
+// speak(pet);
 
 //--------------------------------
+
+function bake(degrees) {
+  var message;
+
+  if (degrees > 200) {
+    message = "Daj spokój, nie jestem reaktorem atomowym";
+  } else if (degrees < 20) {
+    message = "Nie jestem lodówką";
+  } else {
+    message = "Idealna temperatura";
+    // setMode("pieczenie");
+    // setTemp(degrees);
+  }
+  return message;
+}
+var status = bake(200);
+console.log(status);
