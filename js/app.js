@@ -348,3 +348,38 @@ function calculateArea(r) {
 var radius = 5.2;
 var theArea = calculateArea(radius);
 console.log("Pole koła wynosi: " + theArea);
+
+//-----------------------------------
+
+var avatar = "ogólny";
+var skill = 1.0;
+var pointsPerLevel = 1000;
+var userPoints = 2008;
+
+function getAvatar(points) {
+  var level = points/pointsPerLevel;
+
+  if (level == 0) {
+    return "Niedźwiadek Yogi";
+  } else if (level == 1) {
+    return "Kot"
+  } else if (level >= 2) {
+    return "Goryl";
+  }
+}
+
+function updatePoints(bonus, newPoints) {
+  var i = 0;
+  while (i < bonus) {
+    newPoints = newPoints + skill * bonus;
+    i = i + 1;
+  }
+  return newPoints + userPoints;
+}
+
+userPoints = updatePoints(2, 100);
+avatar = getAvatar(2112);
+console.log(userPoints);
+console.log(avatar);
+
+//---------------------------------
