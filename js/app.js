@@ -478,3 +478,22 @@ function display(output) {
 var clunkCounter = 0;
 kodoskryptoinator(5);
 console.log(clunkCounter);
+
+//----------------------------------
+
+var balance = 10500;
+var camerOn = true;
+
+function steal(balance, amount) {
+  cameraOn = false;
+  if (amount < balance) {
+    balance = balance - amount;
+  }
+  return amount;
+  cameraOn = true;
+}
+
+var amount = steal(balance, 1250);
+alert("Złodziej: ukardłem Ci " + amount + "!");
+
+//-----------------------------------
