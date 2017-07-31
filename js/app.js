@@ -481,10 +481,10 @@ console.log(clunkCounter);
 
 //----------------------------------
 
-var balance = 10500;
+var balance = 10500; //ZMIENNA GLOBALNA
 var camerOn = true;
 
-function steal(balance, amount) {
+function steal(balance, amount) { //PRZESŁONIĘCIE PARAMETRU BALANCE - BŁĄD
   cameraOn = false;
   if (amount < balance) {
     balance = balance - amount;
@@ -497,3 +497,9 @@ var amount = steal(balance, 1250);
 alert("Złodziej: ukardłem Ci " + amount + "!");
 
 //-----------------------------------
+
+var scores = [60, 50, 60, 58, 54, 54, 58, 50, 52, 54];
+var solution2 = scores[2];
+alert("Płyn do baniek nr 2 wynik: " + soultion2);
+
+// -----------------------------------
