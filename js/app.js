@@ -433,14 +433,48 @@ function computeDistance(x1, y1, x2, y2) {
   return d
 }
 
-function circleArea(r) {
+function someArea(r) {
   var area = Math.PI * r * r;
   return area;
 }
-console.log(circleArea);
 
 setup(width, height);
-var area = circleArea(radius);
+var area = someArea(radius);
 var distance = computeDistance(x, y, centerX, centerY);
-alert("Pole: " + area);
-alert("Odległość: " + distance);
+// alert("Pole: " + area);
+// alert("Odległość: " + distance);
+
+//-------------------------------------
+
+function clunk(times) {
+  var num = times;
+  while (num > 0) {
+    display("brzęk");
+    num = num - 1;
+  }
+}
+
+function kodoskryptoinator(size) {
+  var facky = 1;
+  clunkCounter = 0;
+  if (size == 0) {
+    display("brzęk");
+  } else if (size == 1) {
+    display("biiip");
+  } else {
+    while (size > 1) {
+      facky = facky * size;
+      size = size - 1;
+    }
+    clunk(facky);
+  }
+}
+
+function display(output) {
+  console.log(output);
+  clunkCounter = clunkCounter + 1;
+}
+
+var clunkCounter = 0;
+kodoskryptoinator(5);
+console.log(clunkCounter);
