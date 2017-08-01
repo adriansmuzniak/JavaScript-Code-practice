@@ -494,12 +494,22 @@ function steal(balance, amount) { //PRZESŁONIĘCIE PARAMETRU BALANCE - BŁĄD
 }
 
 var amount = steal(balance, 1250);
-alert("Złodziej: ukardłem Ci " + amount + "!");
+// alert("Złodziej: ukardłem Ci " + amount + "!");
 
 //---TABLICE W JAVASCRIPT--------------
 
 var scores = [60, 50, 60, 58, 54, 54, 58, 50, 52, 54];
 var solution2 = scores[2];
-alert("Płyn do baniek nr 2 wynik: " + soultion2);
+console.log("Płyn do baniek nr 2 wynik: " + solution2);
 
+var flavors = ["waniliowe", "truskawkowe", "czekoladowe", "malaga", "jabłkowe"];
+var iceCreams = flavors[3];
+console.log(iceCreams);
+flavors[3] = "jagodowe"
+var iceCreams = flavors[3];
+console.log(iceCreams);
+console.log(flavors);
+console.log(flavors.length);
+var iceCreamLength = flavors.length;
+console.log(iceCreamLength);
 // -----------------------------------
