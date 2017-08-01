@@ -496,7 +496,7 @@ function steal(balance, amount) { //PRZESŁONIĘCIE PARAMETRU BALANCE - BŁĄD
 var amount = steal(balance, 1250);
 alert("Złodziej: ukardłem Ci " + amount + "!");
 
-//-----------------------------------
+//---TABLICE W JAVASCRIPT--------------
 
 var scores = [60, 50, 60, 58, 54, 54, 58, 50, 52, 54];
 var solution2 = scores[2];
