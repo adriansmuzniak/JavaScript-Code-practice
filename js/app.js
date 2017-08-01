@@ -523,8 +523,8 @@ function makePhrases() {
   var rand2 = Math.floor(Math.random() * words2.length);
   var rand3 = Math.floor(Math.random() * words3.length);
 
-  var phrase = words1[rand1] + " " + words2[rand2] + " " + words3[rand3];
-  console.log(phrase);
+  var phrase = "<br>" + words1[rand1] + " " + words2[rand2] + " " + words3[rand3] + "<br>";
+  document.write(phrase);
 }
 
 makePhrases();
@@ -534,3 +534,19 @@ makePhrases();
 makePhrases();
 
 //--------------------------------------
+
+console.log( 1 || ["element1", "element2"]);
+console.log( 0 || ["element1", "element2"]);
+console.log( 1 && ["element1", "element2"]);
+console.log( 0 && ["element1", "element2"]);
+console.log( 1 || ["element1", "element2"]);
+console.log( 0 || ["element1", "element2"]);
+console.log( 1 || false);
+console.log( 0 || false);
+console.log( 1 || true);
+console.log( 0 || true);
+console.log( 1 && true);
+console.log( 0 && true);
+console.log( 1 && false);
+console.log( undefined && 1);
+//-----------------------------------------
