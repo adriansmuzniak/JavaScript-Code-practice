@@ -553,9 +553,10 @@ console.log( undefined && 1);
 
 // Usuwanie z tablicy elementów, prototypowanie, strict mode, pobranie ID i data-setu z DOM, funkcje, operatory logiczne, hoisting...
 
-var scores = [60, 50, 60, 58, 54, 54, 58, 50, 52, 54, 58, 87, 57, 48, 38, 58, 48, 69, 37, 48, 47, 27, 75, 63, 46, 58, 85, 84, 67, 36, 57, 84, 75, 39, 85, 74];
+var scores = [60, 50, 60, 58, 54, 54, 58, 50, 52, 54, 58, 87, 57, 48, 38, 58, 48, 69, 37, 48, 47, 27, 75, 63, 46, 58, 85, 87, 67, 36, 57, 84, 75, 39, 85, 74];
 var output;
 var highScore = 0;
+var bestSolutions = [];
 // Pętla While
 
 // var i = 0;
@@ -573,8 +574,15 @@ for (i=0; i<scores.length; i++) {
     highScore = scores[i]
   }
 }
-console.log("Liczba testów: " + scores.length);
-console.log("Największa liczba wytworzonych baniek: " + highScore);
+
+for (i=0; i<scores.length; i++) {
+  if (scores[i] == highScore) {
+    bestSolutions.push(i)
+  }
+}
+console.log("Liczba testów: " + scores.length); //liczba testów
+console.log("Największa liczba wytworzonych baniek: " + highScore); //najwyższy wynik
+console.log("Płyny z najlepszym wynikiem to: " + bestSolutions);
 
 //-----------------------------------------
 
