@@ -552,3 +552,33 @@ console.log( undefined && 1);
 //-----------------------------------------
 
 // Usuwanie z tablicy elementów, prototypowanie, strict mode, pobranie ID i data-setu z DOM, funkcje, operatory logiczne, hoisting...
+
+var scores = [60, 50, 60, 58, 54, 54, 58, 50, 52, 54, 58, 47, 57, 48, 38, 58, 48, 69, 37, 48, 47, 27, 75, 63, 46, 58, 85, 84, 67, 36, 57, 84, 75, 39, 85, 74];
+var output;
+var i = 0;
+  while (i < scores.length) {
+  output = "Płyn do baniek nr: " + i + " wynik: " + scores[i];
+  console.log(output);
+  i = i + 1;
+}
+
+//-----------------------------------------
+
+var products = ["Czu-czu-Lada", "Miętowy Chłód", "Ciasto naleśnikowe", "Guma Balonowa"];
+var hasBubbleGum = [false, false, false, true];
+var i = 0;
+
+while (i < hasBubbleGum.length) {
+  if (hasBubbleGum[i]) {
+    console.log(products[i] + " zawiera gumę do żucia.");
+      }
+  i = i + 1;
+}
+
+for (i = 0; i < hasBubbleGum.length; i++) {
+  if (hasBubbleGum[i]) {
+    console.log(products[i] + " zawiera gumę do żucia.");
+  }
+}
+
+//------------------------------------------
