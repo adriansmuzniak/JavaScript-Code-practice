@@ -550,3 +550,5 @@ console.log( 0 && true);
 console.log( 1 && false);
 console.log( undefined && 1);
 //-----------------------------------------
+
+// Usuwanie z tablicy elementów, prototypowanie, strict mode, pobranie ID i data-setu z DOM, funkcje, operatory logiczne, hoisting...
