@@ -551,39 +551,6 @@ console.log( 1 && false);
 console.log( undefined && 1);
 //-----------------------------------------
 
-// Usuwanie z tablicy elementów, prototypowanie, strict mode, pobranie ID i data-setu z DOM, funkcje, operatory logiczne, hoisting...
-
-var scores = [60, 50, 60, 58, 54, 54, 58, 50, 52, 54, 58, 87, 57, 48, 38, 58, 48, 69, 37, 48, 47, 27, 75, 63, 46, 58, 85, 87, 67, 36, 57, 84, 75, 39, 85, 74];
-var output;
-var highScore = 0;
-var bestSolutions = [];
-// Pętla While
-
-// var i = 0;
-//   while (i < scores.length) {
-//   output = "Płyn do baniek nr: " + i +
-//   " wynik: " + scores[i];
-//   console.log(output);
-//   i = i + 1;
-// }
-
-for (i=0; i<scores.length; i++) {
-  output = "Płyn do baniek nr: " + i + " wynik: " + scores[i];
-  console.log(output);
-  if (scores[i] > highScore) {
-    highScore = scores[i]
-  }
-}
-
-for (i=0; i<scores.length; i++) {
-  if (scores[i] == highScore) {
-    bestSolutions.push(i)
-  }
-}
-console.log("Liczba testów: " + scores.length); //liczba testów
-console.log("Największa liczba wytworzonych baniek: " + highScore); //najwyższy wynik
-console.log("Płyny z najlepszym wynikiem to: " + bestSolutions);
-
 //-----------------------------------------
 
 var products = ["Czu-czu-Lada", "Miętowy Chłód", "Ciasto naleśnikowe", "Guma Balonowa"];
@@ -604,5 +571,67 @@ for (i = 0; i < hasBubbleGum.length; i++) {
     console.log(products[i] + " zawiera gumę do żucia.");
   }
 }
+// Usuwanie z tablicy elementów, prototypowanie, strict mode, pobranie ID i data-setu z DOM, funkcje, operatory logiczne, hoisting...
+
+var scores = [60, 50, 60, 58, 54, 54, 58, 50, 52, 54, 58, 87, 57, 48, 38, 58, 48, 69, 37, 48, 47, 27, 75, 63, 46, 58, 85, 87, 67, 36, 57, 84, 75, 39, 85, 74];
+var output;
+var highScore = 0;
+// Pętla While
+
+// var i = 0;
+//   while (i < scores.length) {
+//   output = "Płyn do baniek nr: " + i +
+//   " wynik: " + scores[i];
+//   console.log(output);
+//   i = i + 1;
+// }
+
+for (i=0; i<scores.length; i++) {
+  output = "Płyn do baniek nr: " + i + " wynik: " + scores[i];
+  console.log(output);
+  if (scores[i] > highScore) {
+    highScore = scores[i]
+  }
+}
+console.log("Liczba testów: " + scores.length); //liczba testów
+console.log("Największa liczba wytworzonych baniek: " + highScore); //najwyższy wynik
+
+var bestSolutions = [];
+for (i=0; i<scores.length; i++) {
+  if (scores[i] == highScore) {
+    bestSolutions.push(i)
+  }
+}
+console.log("Płyny z najlepszym wynikiem to: " + bestSolutions);
+
 
 //------------------------------------------
+
+function printHighScores(scores) {
+  var highScore = 0;
+  var output;
+  for (var i=0; i < scores.length; i++) {
+    output = "Płyn do baniek nr " + i + " wynik: " + scores[i];
+    console.log(output);
+    if (scores[i] > highScore) {
+      highScore = scores[i];
+    }
+  }
+  return highScore;
+}
+
+function getBestResults(scores, highScore) {
+  var bestSolutions = [];
+  for (var i=0; i<scores.length; i++) {
+    if (scores[i] == highScore) {
+      bestSolutions.push(i);
+    }
+  }
+  return bestSolutions
+}
+
+var highScore = printHighScores(scores);
+var bestSolutions = getBestResults(scores, highScore);
+
+console.log("Płyny z najlepszym wynikiem: " + bestSolutions);
+console.log("Płyn z najlepszym wynikiem: " + highScore);
