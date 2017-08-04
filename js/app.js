@@ -574,6 +574,7 @@ for (i = 0; i < hasBubbleGum.length; i++) {
 // Usuwanie z tablicy elementów, prototypowanie, strict mode, pobranie ID i data-setu z DOM, funkcje, operatory logiczne, hoisting...
 
 var scores = [60, 50, 60, 58, 54, 54, 58, 50, 52, 54, 58, 87, 57, 48, 38, 58, 48, 69, 37, 48, 47, 27, 75, 63, 46, 58, 85, 87, 67, 36, 57, 84, 75, 39, 85, 74];
+var costs = [.34, .23, .53, .65, .75, .23, .76, .34, .76, .23, .56, .67, .12, .67, .45, .89, .65, .43, .32, .21, .45, .34, .12, .87, .65, .45, .34, .23, .34, .43, .32, .21, .45, .34, .12, .87];
 var output;
 var highScore = 0;
 // Pętla While
@@ -586,23 +587,23 @@ var highScore = 0;
 //   i = i + 1;
 // }
 
-for (i=0; i<scores.length; i++) {
-  output = "Płyn do baniek nr: " + i + " wynik: " + scores[i];
-  console.log(output);
-  if (scores[i] > highScore) {
-    highScore = scores[i]
-  }
-}
-console.log("Liczba testów: " + scores.length); //liczba testów
-console.log("Największa liczba wytworzonych baniek: " + highScore); //najwyższy wynik
-
-var bestSolutions = [];
-for (i=0; i<scores.length; i++) {
-  if (scores[i] == highScore) {
-    bestSolutions.push(i)
-  }
-}
-console.log("Płyny z najlepszym wynikiem to: " + bestSolutions);
+// for (i=0; i<scores.length; i++) {
+//   output = "Płyn do baniek nr: " + i + " wynik: " + scores[i];
+//   console.log(output);
+//   if (scores[i] > highScore) {
+//     highScore = scores[i]
+//   }
+// }
+// console.log("Liczba testów: " + scores.length); //liczba testów
+// console.log("Największa liczba wytworzonych baniek: " + highScore); //najwyższy wynik
+//
+// var bestSolutions = [];
+// for (i=0; i<scores.length; i++) {
+//   if (scores[i] == highScore) {
+//     bestSolutions.push(i)
+//   }
+// }
+// console.log("Płyny z najlepszym wynikiem to: " + bestSolutions);
 
 
 //------------------------------------------
@@ -620,7 +621,7 @@ function printHighScores(scores) {
   return highScore;
 }
 
-function getBestResults(scores, highScore) {
+function getBestResults(scores, highscore) {
   var bestSolutions = [];
   for (var i=0; i<scores.length; i++) {
     if (scores[i] == highScore) {
@@ -631,7 +632,24 @@ function getBestResults(scores, highScore) {
 }
 
 var highScore = printHighScores(scores);
-var bestSolutions = getBestResults(scores, highScore);
+console.log("Najwyższy wynik: " + highScore);
 
+var bestSolutions = getBestResults(scores, highScore);
 console.log("Płyny z najlepszym wynikiem: " + bestSolutions);
-console.log("Płyn z najlepszym wynikiem: " + highScore);
+
+function getMoreEffectiveSolution(score, costs, highscore) {
+  var cost = 100;
+  var index;
+  for (var i=0; i<scores.length; i++) {
+    if (scores[i] == highscore) {
+      if (cost > cost[i]) {
+        index = i;
+        cost = cost[i];
+      }
+    }
+  }
+  return index
+}
+
+var mostCostEffective = getMoreEffectiveSolution(scores, costs, highScore);
+console.log("Płyn numer: " + mostCostEffective + " jest najbardziej opłacalny.");
