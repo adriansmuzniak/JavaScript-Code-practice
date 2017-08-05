@@ -670,3 +670,20 @@ var chevy = {
 console.log(chevy.model);
 chevy.model = "inny";
 console.log(chevy.model);
+
+var cadi = {
+  make: "Cadillac",
+  model: "Thunder",
+  year: 1955,
+  color: "lightbrown",
+  passengers: 5,
+  mileage: 12892,
+  convertible: false,
+  "comgortable Seats": true
+}
+
+var miles = cadi.mileage;
+if (miles < 13000) {
+  // buyIt();
+  console.log("Wow");
+}
