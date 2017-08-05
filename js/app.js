@@ -1,4 +1,4 @@
-// JS snippets from book(Rusz głową! Programowanie w javaScript).
+// JS examples from book(Rusz głową! Programowanie w javaScript).
 
 setTimeout(wakeUpUser, 5000);
 function wakeUpUser(){
@@ -637,19 +637,36 @@ console.log("Najwyższy wynik: " + highScore);
 var bestSolutions = getBestResults(scores, highScore);
 console.log("Płyny z najlepszym wynikiem: " + bestSolutions);
 
-function getMoreEffectiveSolution(score, costs, highscore) {
+function getMoreEffectiveSolution(scores, costs, highscore) {
   var cost = 100;
   var index;
   for (var i=0; i<scores.length; i++) {
     if (scores[i] == highscore) {
-      if (cost > cost[i]) {
+      if (cost > costs[i]) {
         index = i;
-        cost = cost[i];
+        cost = costs[i];
       }
     }
   }
-  return index
+  return index;
 }
 
 var mostCostEffective = getMoreEffectiveSolution(scores, costs, highScore);
 console.log("Płyn numer: " + mostCostEffective + " jest najbardziej opłacalny.");
+
+//-----------------------------------------------
+// OBIEKTY
+
+var chevy = {
+  make: "Chevy",
+  model: "Bel Air",
+  year: 1957,
+  color: "czerwony",
+  passengers: 2,
+  convertible: false,
+  mileage: 1021
+};
+
+console.log(chevy.model);
+chevy.model = "inny";
+console.log(chevy.model);
