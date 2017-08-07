@@ -668,8 +668,6 @@ var chevy = {
 };
 
 console.log(chevy.model);
-chevy.model = "inny";
-console.log(chevy.model);
 
 var cadi = {
   make: "Cadillac",
@@ -746,7 +744,7 @@ var taxi = {
 function prequal(car) {
   if (car.mileage > 10000) {
     return false;
-  } else if (car.year > 1955) {
+  } else if (car.year > 1960) {
     return false;
   }
   return true;
@@ -757,4 +755,25 @@ if (worthToLook) {
   console.log("Powinieneś zainteresować się tym " + taxi.make + " " + taxi.model);
 } else {
   console.log("Ten " + taxi.make + " " + taxi.model + " możesz sobie podarować");
+}
+
+var worthToLook2 = prequal(chevy);
+if (worthToLook2) {
+  console.log("Powinieneś zainteresować się tym " + chevy.make + " " + chevy.model);
+} else {
+  console.log("Ten " + chevy.make + " " + chevy.model + " możesz sobie podarować");
+}
+
+var worthToLook3 = prequal(cadi);
+if (worthToLook3) {
+  console.log("Powinieneś zainteresować się tym " + cadi.make + " " + cadi.model);
+} else {
+  console.log("Ten " + cadi.make + " " + cadi.model + " możesz sobie podarować");
+}
+
+var worthToLook4 = prequal(malyFiat);
+if (worthToLook4) {
+  console.log("Powinieneś zainteresować się tym " + malyFiat.make + " " + malyFiat.model);
+} else {
+  console.log("Ten " + malyFiat.make + " " + malyFiat.model + " możesz sobie podarować");
 }
