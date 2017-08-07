@@ -797,3 +797,32 @@ console.log(goodDoggy);
 console.log(fido.name + " waży teraz " + fido.weight + " kg");
 
 //----------------------------------
+
+var superSecretFile = {
+  level: "tajne",
+  opened: 0,
+  password: 2,
+  contents: "Następne spotkanie z dr. Zatanem odbędzie się w Katowicach."
+};
+
+function getSecret(file, secretPassword) {
+  file.opened = file.opened + 1;
+  if (secretPassword == file.password) {
+    return file.contents;
+  } else {
+    return "Złe hasło, brak dostępu!";
+  }
+}
+
+function setSecret(file, secretPassword, secret) {
+  if (secretPassword == file.password) {
+    file.opened = 0;
+    file.contents = secret;
+  }
+}
+
+var secret = getSecret(superSecretFile, 2);
+console.log(secret);
+
+setSecret(superSecretFile, 2, "Następne spotkanie z dr. Zatanem odbędzie się w Żywcu.");
+secret = getSecret(superSecretFile, 2);
