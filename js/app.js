@@ -690,6 +690,8 @@ if (miles < 13000) {
   console.log(cadi);
 }
 
+//---------------------------------
+
 var malyFiat = {
   make: "Fiat",
   model: "500",
@@ -716,3 +718,43 @@ if (doggy.weight > 20) {
 }
 var speak = doggy.name + " szczeka " + bark + " kiedy ma ochotę na " + doggy.activity;
 console.log(speak);
+
+console.log(doggy);
+delete doggy.age; //usunięcie właściowości "age"
+console.log(doggy);
+
+//------------------------------
+
+var lookMaNoProsp = {};
+lookMaNoProsp.age = 5;
+if (lookMaNoProsp.age < 10) {
+  lookMaNoProsp.school = "podstawowa";
+};
+
+//-----------------------------
+
+var taxi = {
+  make: "SieMoCorp",
+  model: "Taxi",
+  year: 1955,
+  color: "żółty",
+  passengers: "yellow",
+  convertible: false,
+  mileage: 281341
+};
+
+function prequal(car) {
+  if (car.mileage > 10000) {
+    return false;
+  } else if (car.year > 1955) {
+    return false;
+  }
+  return true;
+}
+
+var worthToLook = prequal(taxi);
+if (worthToLook) {
+  console.log("Powinieneś zainteresować się tym " + taxi.make + " " + taxi.model);
+} else {
+  console.log("Ten " + taxi.make + " " + taxi.model + " możesz sobie podarować");
+}
