@@ -679,11 +679,40 @@ var cadi = {
   passengers: 5,
   mileage: 12892,
   convertible: false,
-  "comgortable Seats": true
+  "comfortable Seats": true
 }
+
+cadi.hornSound = "buuuum"
 
 var miles = cadi.mileage;
 if (miles < 13000) {
   // buyIt();
-  console.log("Wow");
+  console.log(cadi);
 }
+
+var malyFiat = {
+  make: "Fiat",
+  model: "500",
+  year: 1957,
+  color: "szaroniebieski",
+  passengers: 2,
+  convertible: false,
+  mileage: 80000,
+  needWashing: true,
+}
+
+var doggy = {
+  name: "Burek",
+  weight: 20.3,
+  age: 4,
+  breed: "mieszaniec",
+  activity: "przonoszenie piłki"
+}
+var bark;
+if (doggy.weight > 20) {
+  bark = "HAU HAU HAU"
+} else {
+  bark = "hau hau hau";
+}
+var speak = doggy.name + " szczeka " + bark + " kiedy ma ochotę na " + doggy.activity;
+console.log(speak);
