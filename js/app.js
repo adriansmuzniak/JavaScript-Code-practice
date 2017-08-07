@@ -777,3 +777,23 @@ if (worthToLook4) {
 } else {
   console.log("Ten " + malyFiat.make + " " + malyFiat.model + " możesz sobie podarować");
 }
+
+//-----------------------------------
+
+var fido = {
+  name: "Burek",
+  weight: 48,
+  breed: "mieszaniec",
+  loves: "spacery"
+}
+
+function loseWeight(dog, amount) {
+  dog.weight = dog.weight - amount;
+  return dog.weight;
+}
+
+var goodDoggy = loseWeight(fido, 10);
+console.log(goodDoggy);
+console.log(fido.name + " waży teraz " + fido.weight + " kg");
+
+//----------------------------------
