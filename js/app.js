@@ -870,17 +870,47 @@ var myRaise = mySalary * 0.05;
 
 function calculateSalary(age, pension, raise) {
   myRaise = mySalary * 0.05;
-  for (var i = myAge; i < 68; i++) {
+  for (var i = myAge; i < 67; i++) {
     mySalary = mySalary + myRaise;
     myRaise = mySalary * 0.05;
     myAge++;
     console.log(myAge);
-    console.log(mySalary);
+    console.log(Math.floor(mySalary));
   }
-    return mySalary;
+  return Math.floor(mySalary);
 }
 
-var oblicz = calculateSalary(myAge, mySalary, myRaise);
-console.log(oblicz);
+var fullPensionBeforeRetirement = calculateSalary(myAge, mySalary, myRaise);
+console.log(fullPensionBeforeRetirement);
 
 //--------------------------------------------
+//THIS - WŁAŚCIWOŚCI OBIEKTU
+
+var fiat = {
+  make: "Fiat",
+  model: "500",
+  year: 1957,
+  color: "szaroniebieski",
+  passengers: 2,
+  convertible: false,
+  mileage: 0,
+  started: false,
+  start: function() {
+    this.started = true;
+  },
+  stop: function() {
+    this.started = false;
+  },
+  drive: function() {
+    if (this.started) {
+      alert("Jedziemy!!");
+    } else {
+      alert("Musisz włączyć silnik");
+    }
+  }
+};
+
+fiat.drive();
+fiat.start();
+fiat.drive();
+fiat.stop();
