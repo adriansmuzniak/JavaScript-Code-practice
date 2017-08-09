@@ -903,9 +903,9 @@ var fiat = {
   },
   drive: function() {
     if (this.started) {
-      alert("Jedziemy!!");
+      console.log("Jedziemy");
     } else {
-      alert("Musisz włączyć silnik");
+      console.log("Musisz włączyć silnik");
     }
   }
 };
@@ -914,3 +914,30 @@ fiat.drive();
 fiat.start();
 fiat.drive();
 fiat.stop();
+
+//--------------------------------------------
+var song = {
+  name: "Brother in arms",
+  artists: "Dire in Stairs",
+  minutes: 4,
+  seconds: 3,
+  genre: "80",
+  playing: false,
+  play: function() {
+    if (!this.playing) {
+      this.playing = true,
+      console.log("Odtwarzam teraz " + this.name + " wykonywany przez: " + this.artists + ".");
+    }
+  },
+  pause: function() {
+    if (this.playing) {
+      this.playing = false,
+      console.log("Odwtwarzanie utworu " + this.name + " wykonywanego przez: " + this.artists + " zostało wstrzymane.");
+    }
+  }
+}
+
+song.play();
+song.pause();
+
+//----------------------------------------------
