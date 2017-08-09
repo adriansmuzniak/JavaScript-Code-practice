@@ -950,6 +950,7 @@ var fiat = {
   convertible: false,
   mileage: 0,
   started: false,
+  fuel: 0,
   start: function() {
     this.started = true;
   },
@@ -962,6 +963,10 @@ var fiat = {
     } else {
       console.log("Musisz włączyć silnik");
     }
+  },
+  addFuel: function(amount) {
+    this.fuel = this.fuel + amount;
+  }
   }
 };
 
