@@ -664,8 +664,27 @@ var chevy = {
   color: "czerwony",
   passengers: 2,
   convertible: false,
-  mileage: 1021
+  mileage: 1021,
+  started: false,
+  start: function() {
+    this.started = true;
+  },
+  stop: function() {
+    this.started = false;
+  },
+  drive: function() {
+    if (this.started) {
+      console.log(this.make + " " + this.model + " robi: brrrrum wrrrr!");
+    } else {
+      console.log("Najpierw musisz włączyć silnik");
+    }
+  }
 };
+chevy.start();
+chevy.drive();
+chevy.stop();
+chevy.drive();
+
 
 console.log(chevy.model);
 
@@ -677,8 +696,26 @@ var cadi = {
   passengers: 5,
   mileage: 12892,
   convertible: false,
-  "comfortable Seats": true
-}
+  "comfortable Seats": true,
+  started: false,
+  start: function() {
+    this.started = true;
+  },
+  stop: function() {
+    this.started = false;
+  },
+  drive: function() {
+    if (this.started) {
+      console.log(this.make + " " + this.model + " wystartował więc jedziemyyyyyy");
+    } else {
+      console.log("Najpierw musisz włączyć silnik");
+    }
+  }
+};
+cadi.start();
+cadi.drive();
+cadi.stop();
+cadi.drive();
 
 cadi.hornSound = "buuuum"
 
@@ -738,8 +775,26 @@ var taxi = {
   color: "żółty",
   passengers: "yellow",
   convertible: false,
-  mileage: 281341
+  mileage: 281341,
+  started: false,
+  start: function() {
+    this.started = true;
+  },
+  stop: function() {
+    this.started = false;
+  },
+  drive: function() {
+    if (this.started) {
+      console.log(this.make + " " + this.model + " wystartował!");
+    } else {
+      console.log("Najpierw musisz włączyć silnik");
+    }
+  }
 };
+taxi.start();
+taxi.drive();
+taxi.stop();
+taxi.drive();
 
 function prequal(car) {
   if (car.mileage > 10000) {
@@ -958,3 +1013,5 @@ var eightBall = {
 
 eightBall.shake();
 console.log(eightBall.look());
+
+//---------------------------------------------
