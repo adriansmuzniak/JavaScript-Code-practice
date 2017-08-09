@@ -862,3 +862,25 @@ function displayCar(car) {
 
 var carToSell = makeCar();
 displayCar(carToSell);
+
+//------------------------------------------------
+var myAge = 31;
+var mySalary = 3000;
+var myRaise = mySalary * 0.05;
+
+function calculateSalary(age, pension, raise) {
+  myRaise = mySalary * 0.05;
+  for (var i = myAge; i < 68; i++) {
+    mySalary = mySalary + myRaise;
+    myRaise = mySalary * 0.05;
+    myAge++;
+    console.log(myAge);
+    console.log(mySalary);
+  }
+    return mySalary;
+}
+
+var oblicz = calculateSalary(myAge, mySalary, myRaise);
+console.log(oblicz);
+
+//--------------------------------------------
