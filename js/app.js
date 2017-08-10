@@ -952,28 +952,42 @@ var fiat = {
   started: false,
   fuel: 0,
   start: function() {
-    this.started = true;
+    if (this.fuel < 1) {
+      alert("Ej, musisz zatankować!")
+    }  else {
+      this.started = true;
+    }
   },
   stop: function() {
     this.started = false;
   },
   drive: function() {
     if (this.started) {
-      console.log("Jedziemy");
+      if (this.fuel > 0) {
+        alert(this.make + " " + this.model + " " + " został odpalony");
+        this.fuel = this.fuel - 1;
+        console.log(this.fuel);
+      } else {
+        alert("Kur..., brak paliwa");
+        this.stop();
+        }
     } else {
-      console.log("Musisz włączyć silnik");
+      alert("Najpierw musisz zatankować")
     }
   },
   addFuel: function(amount) {
     this.fuel = this.fuel + amount;
   }
-  }
 };
 
-fiat.drive();
+fiat.addFuel(2);
 fiat.start();
 fiat.drive();
+fiat.drive();
+fiat.drive();
+fiat.drive();
 fiat.stop();
+
 
 //--------------------------------------------
 var song = {
