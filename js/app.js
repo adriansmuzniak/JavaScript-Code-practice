@@ -952,8 +952,8 @@ var fiat = {
   started: false,
   fuel: 0,
   start: function() {
-    if (this.fuel < 1) {
-      alert("Ej, musisz zatankować!")
+    if (this.fuel == 0) {
+      console.log("Ej, musisz zatankować!")
     }  else {
       this.started = true;
     }
@@ -964,15 +964,15 @@ var fiat = {
   drive: function() {
     if (this.started) {
       if (this.fuel > 0) {
-        alert(this.make + " " + this.model + " " + " został odpalony");
+        console.log(this.make + " " + this.model + " " + " został odpalony");
         this.fuel = this.fuel - 1;
         console.log(this.fuel);
       } else {
-        alert("Kur..., brak paliwa");
+        console.log("Kur..., brak paliwa");
         this.stop();
         }
     } else {
-      alert("Najpierw musisz zatankować")
+      console.log("Najpierw musisz zatankować")
     }
   },
   addFuel: function(amount) {
@@ -1039,3 +1039,12 @@ var access = document.getElementById("code9");
 var code = access.innerHTML;
 code = code + "północy";
 console.log(code);
+
+var access2 = document.getElementById("code4");
+var code2 = access2.innerHTML;
+code2 = code2 + " południu";
+console.log("code2");
+
+//-------------------------------------------
+
+//DOCUMENT OBJECT MODEL
