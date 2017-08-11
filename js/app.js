@@ -1034,3 +1034,8 @@ eightBall.shake();
 console.log(eightBall.look());
 
 //---------------------------------------------
+
+var access = document.getElementById("code9");
+var code = access.innerHTML;
+code = code + "północy";
+console.log(code);
