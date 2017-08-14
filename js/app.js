@@ -1061,18 +1061,72 @@ function init() {
   song1.innerHTML = "Smutne zamszowe łańcuchy, Elvisa Pagelya";
   song2.innerHTML = "Wielkie obiekty w ogniu, Jerry'ego JSON Lewisa";
   song3.innerHTML = "Pierwszy wiersz kodu, Johnny'ego JavaScripta";
-
+// --
   var planet = document.getElementById("redplanet");
   planet.innerHTML = "Alarm czerwony: rozpoczęto ostrzał z fazerów";
   planet.setAttribute("class", "redtext");
-
+// --
   var scoop = document.getElementById("raspberry");
   var altText = scoop.getAttribute("alt");
-  console.log("W oknie konsoli nie mogę zobaczyć obrazka");
-  console.log("ale powiedziano mi, że wygląda jak " + altText);
-
+  if (altText == null) {
+    console.log("Wartość alt nie istnieje");
+  } else {
+    console.log("W oknie konsoli nie mogę zobaczyć obrazka");
+    console.log("ale powiedziano mi, że wygląda jak " + altText);
+  }
 }
 
-window.onload = init;
+// window.onload = init;
 
 //--------------------------------------------
+// TYPY
+
+var y = false;
+var x = true;
+if (y == false && x == true) {
+  y = x + y;
+  x = y + x;
+  console.log(y, x);
+}
+
+var customer = {
+  name: "Joanna",
+}
+if (customer.phoneNumber == undefined) {
+  console.log("brak numeru telefonu");
+}
+
+var test1 = "abcdef";
+var test2 = 123;
+var test3 = true;
+var test4 = {};
+var test5 = [];
+var test6;
+var test7 = {"abcdef": 123};
+var test8 = ["abcdef", 123];
+function test9() {
+  return "abcdef"
+}
+var test10 = null;
+
+console.log(typeof test1);
+console.log(typeof test2);
+console.log(typeof test3);
+console.log(typeof test4);
+console.log(typeof test5);
+console.log(typeof test6);
+console.log(typeof test7);
+console.log(typeof test8);
+console.log(typeof test9);
+console.log(typeof test10);
+
+var ay = 0/0;
+var by = "food" * 1000;
+var cy = Math.sqrt(-9);
+
+console.log(ay);
+if (isNaN(ay)) {
+  ay = 0;
+}
+console.log(ay);
+//---------------------------------------
