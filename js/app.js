@@ -1049,17 +1049,11 @@ console.log("code2");
 
 //DOCUMENT OBJECT MODEL
 
-function init() {
-  var planet = document.getElementById("greenplanet");
-  planet.innerHTML = "Alarm czerwony: rozpoczęto ostrzał z fazerów";
-  console.log(planet.innerHTML);
-  }
-
-window.onload = init;
 
 //-----------------------------------------
 
-function addSongs() {
+function init() {
+
   var song1 = document.getElementById("song1");
   var song2 = document.getElementById("song2");
   var song3 = document.getElementById("song3");
@@ -1067,6 +1061,18 @@ function addSongs() {
   song1.innerHTML = "Smutne zamszowe łańcuchy, Elvisa Pagelya";
   song2.innerHTML = "Wielkie obiekty w ogniu, Jerry'ego JSON Lewisa";
   song3.innerHTML = "Pierwszy wiersz kodu, Johnny'ego JavaScripta";
+
+  var planet = document.getElementById("redplanet");
+  planet.innerHTML = "Alarm czerwony: rozpoczęto ostrzał z fazerów";
+  planet.setAttribute("class", "redtext");
+
+  var scoop = document.getElementById("raspberry");
+  var altText = scoop.getAttribute("alt");
+  console.log("W oknie konsoli nie mogę zobaczyć obrazka");
+  console.log("ale powiedziano mi, że wygląda jak " + altText);
+
 }
 
-window.onload = addSongs;
+window.onload = init;
+
+//--------------------------------------------
