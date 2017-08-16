@@ -1203,3 +1203,16 @@ var divi = 80 / "10";
 console.log(divi);
 var mini = "10" - 5;
 console.log(mini);
+var conc = 1 + 2 + " pizza";
+var conc2 = 1 + (2 + " pizza");
+var conc3 = (1 + 2) + " pizza";
+console.log(conc, conc2, conc3);
+var love = -true + " love is sometimes " + -false;
+console.log(love);
+console.log(Infinity);
+console.log("43" + 43);
+console.log(2 + "1 1");
+console.log("1" - "1");
+console.log(7 + Number("8"));
+
+//--------------------------------
