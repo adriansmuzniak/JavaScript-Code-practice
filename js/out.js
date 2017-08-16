@@ -1,15 +1,92 @@
+/******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// identity function for calling harmony imports with the correct context
+/******/ 	__webpack_require__.i = function(value) { return value; };
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, {
+/******/ 				configurable: false,
+/******/ 				enumerable: true,
+/******/ 				get: getter
+/******/ 			});
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ })
+/************************************************************************/
+/******/ ([
+/* 0 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
 // JS examples from book(Rusz głową! Programowanie w javaScript).
 
 setTimeout(wakeUpUser, 5000);
-function wakeUpUser(){
-  // console.log("robimy stronkę?");
-}
+function wakeUpUser() {}
+// console.log("robimy stronkę?");
+
 
 // -----------------------------------
 
 var price = 28.99;
 var discount = 10;
-var total = price - (price * (discount/100));
+var total = price - price * (discount / 100);
 if (total > 35) {
   console.log("o Panie");
 } else {
@@ -19,32 +96,33 @@ if (total > 35) {
 // -------------------------------------
 
 var i;
-for(i = 0; i < 10; i++){ }
+for (i = 0; i < 10; i++) {}
 var x = i;
 console.log(x);
 
 //---------------------------------------
 
-var matrix = [];
-matrix.push([1,2,3])
-matrix.push([4,5,6])
-matrix.push([7,8,9])
+matrix = [];
+matrix.push([1, 2, 3]);
+matrix.push([4, 5, 6]);
+matrix.push([7, 8, 9]);
 
-x = matrix[0][2] + matrix[2][1]
+x = matrix[0][2] + matrix[2][1];
 // console.log(matrix);
 
 //-------------------------------------
 var count = 10;
 while (count > 0) {
-  setTimeout(juggle,2000);
+  setTimeout(juggle, 2000);
   count = count - 1;
 }
-function juggle(){
-  setTimeout(1000)
+function juggle() {
+  setTimeout(1000
   // console.log("idzie!");
+  );
 }
 //------------------------------------
-var dog = {name:"Burek", weight: 35};
+var dog = { name: "Burek", weight: 35 };
 if (dog.weight > 30) {
   console.log("HAU HAU");
 } else {
@@ -61,7 +139,7 @@ console.log(circleArea);
 
 var age = 10;
 var name = "Olek";
-if (age > 14){
+if (age > 14) {
   console.log("Przykro mi, ta strona jest tylko dla dzieci");
 } else {
   console.log("witaj " + name);
@@ -69,7 +147,7 @@ if (age > 14){
 //------------------------------------
 
 var temp = 10;
-var resultsum = (9/5) * temp + 32;
+var resultsum = 9 / 5 * temp + 32;
 console.log(resultsum);
 
 //-----------------------------------
@@ -80,9 +158,9 @@ console.log(sumStringNumber);
 //----------------------------------
 
 var scoops = 5;
-while (scoops > 0){
+while (scoops > 0) {
   document.write("kolejna gałka!<br>");
-  scoops = scoops-1;
+  scoops = scoops - 1;
 }
 document.write("życie bez lodów nie jest już takie same<br>");
 
@@ -93,13 +171,13 @@ if (scoops >= 5) {
 } else if (scoops == 3) {
   alert("Lody się kończą");
 } else if (scoops == 2) {
-  alert("Dwa!")
+  alert("Dwa!");
 } else if (scoops == 1) {
-  alert("Jeden!")
+  alert("Jeden!");
 } else if (scoops == 0) {
   // alert("I koniec");
 } else {
-  "Mamy jeszcze dużo lodów, przyjdź i skosztuj"
+  "Mamy jeszcze dużo lodów, przyjdź i skosztuj";
 }
 
 //----------------------------------
@@ -122,11 +200,11 @@ while (count > 0) {
   console.log(count + " " + word + " piwa,");
   console.log("Jedną weź i podaj w koło,");
   count = count - 1;
-  if (count == 4 || count == 3 || count == 2 ) {
-    var word = "butelki"
+  if (count == 4 || count == 3 || count == 2) {
+    var word = "butelki";
     // console.log(count + " " + word + " piwa na ścianie");
   } else if (count == 1) {
-    var word = "butelka"
+    var word = "butelka";
   } else {
     var word = "butelek";
     console.log("nie ma już " + word + " piwa na ścianie");
@@ -136,32 +214,32 @@ while (count > 0) {
 //------------------------------------------------
 var inStock = true;
 var inSale = true;
-if (inStock == true && (inSale == true || price < 60 )) {
+if (inStock == true && (inSale == true || price < 60)) {
   //to wygląda na świetny interes - kupuj!
-  document.write("<br>kupuj, kupuj, kupuj!<br>")
+  document.write("<br>kupuj, kupuj, kupuj!<br>");
 }
 
 //------------------------------------------------
 
 var temp = 81;
 var willRain = true;
-var humid = (temp > 80 && willRain == true);
+var humid = temp > 80 && willRain == true;
 console.log(humid);
 
 var guess = 6;
-var isValid = (guess >= 0 && guess <= 6);
+var isValid = guess >= 0 && guess <= 6;
 console.log(isValid);
 
 var kB = 1287;
-var tooBig = (kB > 1000);
+var tooBig = kB > 1000;
 var urgent = true;
-var sendFile = (urgent == true || tooBig == false);
+var sendFile = urgent == true || tooBig == false;
 console.log(sendFile);
 
 var keyPressed = "N";
 var points = 142;
 var level;
-if (keyPressed == "Y" || (points > 100 && points < 200)) {
+if (keyPressed == "Y" || points > 100 && points < 200) {
   level = 2;
 } else {
   level = 1;
@@ -218,11 +296,11 @@ bark("Skuter", -1); //"Skuter szczeka hau hau"
 bark("Dino", 0, 0); //brak błędu
 bark("Fido", "20"); //"Fido szczeka hau hau"
 bark("Saba", 10); //"Saba szczeka HAU HAU"
-bark("Agent", 21) //"Agent szczeka HAU HAU"
+bark("Agent", 21 //"Agent szczeka HAU HAU"
 
 //---------------------------------------------
 
-function whatShallIwear(temp){
+);function whatShallIwear(temp) {
   if (temp < 15) {
     console.log("ubierz kurtkę");
   } else if (temp < 25) {
@@ -239,28 +317,28 @@ whatShallIwear(30);
 //---------------------------------------
 
 saveMyProfile("Tomek", 1991, 3.81, false);
-function saveMyProfile(name, birthday, GPA, newuser){
-  if (birthday > 2004) {
-    //kod obsługi dziecka
-  }
+function saveMyProfile(name, birthday, GPA, newuser) {
+  if (birthday > 2004) {}
+  //kod obsługi dziecka
+
   //reszta kodu funkcji
 }
 // _____
 
 var student = "Krzysiu";
 var year = 1998;
-var GPA = 381/100;
+var GPA = 381 / 100;
 var status = "oczekujący";
-var isNewUser = (status == "nowy_użytkownik");
+var isNewUser = status == "nowy_użytkownik";
 saveMyProfile(student, year, GPA, isNewUser);
-saveMyProfile(student, year, 381/100, status == "nowy_użytkownik"); //również dopuszczalne
+saveMyProfile(student, year, 381 / 100, status == "nowy_użytkownik"); //również dopuszczalne
 
 //-----------------------------------------
 // PARAMETR A ARGUMENT
 
-function cook(degrees, mode, duration){
-  //ciało funkcji
-}
+function cook(degrees, mode, duration) {}
+//ciało funkcji
+
 // degrees, mode, duration - to są parametry funkcji
 
 cook(180.0, "pieczenie", 30);
@@ -269,23 +347,22 @@ cook(180.0, "pieczenie", 30);
 // Parametry funkcji definiujemy raz, ale do funkcji możemy przekazać różne argumenty!
 
 function doIt(param, name) {
-  var jakistest2 = param/2;
+  var jakistest2 = param / 2;
   console.log(jakistest2 + " " + name);
 }
 var jakisTest = 10;
-var durneImię = "Tomek"
+var durneImię = "Tomek";
 doIt(jakisTest, durneImię);
 
 //----------------------------------------
 
 function dogYears(dogName, age) {
   var years = age * 7;
-  console.log(dogName + " ma " + years + " lata." );
+  console.log(dogName + " ma " + years + " lata.");
 }
 var dog = "Adolf";
 var dogYear = 11;
 dogYears(dog, dogYear);
-
 
 function makeTea(cups, tea) {
   console.log("Parzę " + cups + " filiżanek herbaty " + tea + ".");
@@ -338,7 +415,7 @@ function calculateArea(r) {
   var area;
 
   if (r <= 0) {
-    return 0
+    return 0;
   } else {
     area = Math.PI * r * r;
     return area;
@@ -357,12 +434,12 @@ var pointsPerLevel = 1000;
 var userPoints = 2008;
 
 function getAvatar(points) {
-  var level = points/pointsPerLevel;
+  var level = points / pointsPerLevel;
 
   if (level == 0) {
     return "Niedźwiadek Yogi";
   } else if (level == 1) {
-    return "Kot"
+    return "Kot";
   } else if (level >= 2) {
     return "Goryl";
   }
@@ -421,16 +498,16 @@ var width = 600;
 var height = 400;
 
 function setup(width, height) {
-  centerX = width/2;
-  centerY = height/2;
+  centerX = width / 2;
+  centerY = height / 2;
 }
 
 function computeDistance(x1, y1, x2, y2) {
   var dx = x1 - x2;
   var dy = y1 - y2;
-  var d2 = (dx * dx) + (dy * dy);
+  var d2 = dx * dx + dy * dy;
   var d = Math.sqrt(d2);
-  return d
+  return d;
 }
 
 function someArea(r) {
@@ -482,9 +559,10 @@ console.log(clunkCounter);
 //----------------------------------
 
 var balance = 10500; //ZMIENNA GLOBALNA
-var cameraOn = true;
+var camerOn = true;
 
-function steal(balance, amount) { //PRZESŁONIĘCIE PARAMETRU BALANCE - BŁĄD
+function steal(balance, amount) {
+  //PRZESŁONIĘCIE PARAMETRU BALANCE - BŁĄD
   cameraOn = false;
   if (amount < balance) {
     balance = balance - amount;
@@ -505,7 +583,7 @@ console.log("Płyn do baniek nr 2 wynik: " + solution2);
 var flavors = ["waniliowe", "truskawkowe", "czekoladowe", "malaga", "jabłkowe"];
 var iceCreams = flavors[3];
 console.log(iceCreams);
-flavors[3] = "jagodowe"
+flavors[3] = "jagodowe";
 var iceCreams = flavors[3];
 console.log(iceCreams);
 console.log(flavors);
@@ -535,20 +613,20 @@ makePhrases();
 
 //--------------------------------------
 
-console.log( 1 || ["element1", "element2"]);
-console.log( 0 || ["element1", "element2"]);
-console.log( 1 && ["element1", "element2"]);
-console.log( 0 && ["element1", "element2"]);
-console.log( 1 || ["element1", "element2"]);
-console.log( 0 || ["element1", "element2"]);
-console.log( 1 || false);
-console.log( 0 || false);
-console.log( 1 || true);
-console.log( 0 || true);
-console.log( 1 && true);
-console.log( 0 && true);
-console.log( 1 && false);
-console.log( undefined && 1);
+console.log(1 || ["element1", "element2"]);
+console.log(0 || ["element1", "element2"]);
+console.log(1 && ["element1", "element2"]);
+console.log(0 && ["element1", "element2"]);
+console.log(1 || ["element1", "element2"]);
+console.log(0 || ["element1", "element2"]);
+console.log(1 || false);
+console.log(0 || false);
+console.log(1 || true);
+console.log(0 || true);
+console.log(1 && true);
+console.log(0 && true);
+console.log(1 && false);
+console.log(undefined && 1);
 //-----------------------------------------
 
 //-----------------------------------------
@@ -611,7 +689,7 @@ var highScore = 0;
 function printHighScores(scores) {
   var highScore = 0;
   var output;
-  for (var i=0; i < scores.length; i++) {
+  for (var i = 0; i < scores.length; i++) {
     output = "Płyn do baniek nr " + i + " wynik: " + scores[i];
     console.log(output);
     if (scores[i] > highScore) {
@@ -623,12 +701,12 @@ function printHighScores(scores) {
 
 function getBestResults(scores, highscore) {
   var bestSolutions = [];
-  for (var i=0; i<scores.length; i++) {
+  for (var i = 0; i < scores.length; i++) {
     if (scores[i] == highScore) {
       bestSolutions.push(i);
     }
   }
-  return bestSolutions
+  return bestSolutions;
 }
 
 var highScore = printHighScores(scores);
@@ -640,7 +718,7 @@ console.log("Płyny z najlepszym wynikiem: " + bestSolutions);
 function getMoreEffectiveSolution(scores, costs, highscore) {
   var cost = 100;
   var index;
-  for (var i=0; i<scores.length; i++) {
+  for (var i = 0; i < scores.length; i++) {
     if (scores[i] == highscore) {
       if (cost > costs[i]) {
         index = i;
@@ -666,13 +744,13 @@ var chevy = {
   convertible: false,
   mileage: 1021,
   started: false,
-  start: function() {
+  start: function start() {
     this.started = true;
   },
-  stop: function() {
+  stop: function stop() {
     this.started = false;
   },
-  drive: function() {
+  drive: function drive() {
     if (this.started) {
       console.log(this.make + " " + this.model + " robi: brrrrum wrrrr!");
     } else {
@@ -684,7 +762,6 @@ chevy.start();
 chevy.drive();
 chevy.stop();
 chevy.drive();
-
 
 console.log(chevy.model);
 
@@ -698,13 +775,13 @@ var cadi = {
   convertible: false,
   "comfortable Seats": true,
   started: false,
-  start: function() {
+  start: function start() {
     this.started = true;
   },
-  stop: function() {
+  stop: function stop() {
     this.started = false;
   },
-  drive: function() {
+  drive: function drive() {
     if (this.started) {
       console.log(this.make + " " + this.model + " wystartował więc jedziemyyyyyy");
     } else {
@@ -717,7 +794,7 @@ cadi.drive();
 cadi.stop();
 cadi.drive();
 
-cadi.hornSound = "buuuum"
+cadi.hornSound = "buuuum";
 
 var miles = cadi.mileage;
 if (miles < 13000) {
@@ -735,8 +812,8 @@ var malyFiat = {
   passengers: 2,
   convertible: false,
   mileage: 80000,
-  needWashing: true,
-}
+  needWashing: true
+};
 
 var doggy = {
   name: "Burek",
@@ -744,10 +821,10 @@ var doggy = {
   age: 4,
   breed: "mieszaniec",
   activity: "przonoszenie piłki"
-}
+};
 var bark;
 if (doggy.weight > 20) {
-  bark = "HAU HAU HAU"
+  bark = "HAU HAU HAU";
 } else {
   bark = "hau hau hau";
 }
@@ -777,13 +854,13 @@ var taxi = {
   convertible: false,
   mileage: 281341,
   started: false,
-  start: function() {
+  start: function start() {
     this.started = true;
   },
-  stop: function() {
+  stop: function stop() {
     this.started = false;
   },
-  drive: function() {
+  drive: function drive() {
     if (this.started) {
       console.log(this.make + " " + this.model + " wystartował!");
     } else {
@@ -840,7 +917,7 @@ var fido = {
   weight: 48,
   breed: "mieszaniec",
   loves: "spacery"
-}
+};
 
 function loseWeight(dog, amount) {
   dog.weight = dog.weight - amount;
@@ -905,14 +982,13 @@ function makeCar() {
     colors: colors[rand4],
     passengers: rand5,
     convertible: convertible[rand6],
-    mileage: 0,
-  }
+    mileage: 0
+  };
   return car;
 }
 
 function displayCar(car) {
-  console.log("Twoim nowym samochodem jest: " + car.make + " " + car.model + " z roku " + car.year + " a jego kolor to " + car.colors
-  + "." + " Liczba pasażerów jaka wejdzie: " + car.passengers);
+  console.log("Twoim nowym samochodem jest: " + car.make + " " + car.model + " z roku " + car.year + " a jego kolor to " + car.colors + "." + " Liczba pasażerów jaka wejdzie: " + car.passengers);
 }
 
 var carToSell = makeCar();
@@ -951,17 +1027,17 @@ var fiat = {
   mileage: 0,
   started: false,
   fuel: 0,
-  start: function() {
+  start: function start() {
     if (this.fuel == 0) {
-      console.log("Ej, musisz zatankować!")
-    }  else {
+      console.log("Ej, musisz zatankować!");
+    } else {
       this.started = true;
     }
   },
-  stop: function() {
+  stop: function stop() {
     this.started = false;
   },
-  drive: function() {
+  drive: function drive() {
     if (this.started) {
       if (this.fuel > 0) {
         console.log(this.make + " " + this.model + " " + " został odpalony");
@@ -970,12 +1046,12 @@ var fiat = {
       } else {
         console.log("Kur..., brak paliwa");
         this.stop();
-        }
+      }
     } else {
-      console.log("Najpierw musisz zatankować")
+      console.log("Najpierw musisz zatankować");
     }
   },
-  addFuel: function(amount) {
+  addFuel: function addFuel(amount) {
     this.fuel = this.fuel + amount;
   }
 };
@@ -988,7 +1064,6 @@ fiat.drive();
 fiat.drive();
 fiat.stop();
 
-
 //--------------------------------------------
 var song = {
   name: "Brother in arms",
@@ -997,19 +1072,17 @@ var song = {
   seconds: 3,
   genre: "80",
   playing: false,
-  play: function() {
+  play: function play() {
     if (!this.playing) {
-      this.playing = true,
-      console.log("Odtwarzam teraz " + this.name + " wykonywany przez: " + this.artists + ".");
+      this.playing = true, console.log("Odtwarzam teraz " + this.name + " wykonywany przez: " + this.artists + ".");
     }
   },
-  pause: function() {
+  pause: function pause() {
     if (this.playing) {
-      this.playing = false,
-      console.log("Odwtwarzanie utworu " + this.name + " wykonywanego przez: " + this.artists + " zostało wstrzymane.");
+      this.playing = false, console.log("Odwtwarzanie utworu " + this.name + " wykonywanego przez: " + this.artists + " zostało wstrzymane.");
     }
   }
-}
+};
 
 song.play();
 song.pause();
@@ -1019,16 +1092,16 @@ song.pause();
 var eightBall = {
   index: 0,
   advice: ["tak", "nie", "nie wiem", "może"],
-  shake: function() {
+  shake: function shake() {
     this.index = Math.floor(Math.random() * this.advice.length);
     if (this.index >= this.advice.length) {
       this.index = 0;
     }
   },
-  look: function() {
+  look: function look() {
     return this.advice[this.index];
   }
-}
+};
 
 eightBall.shake();
 console.log(eightBall.look());
@@ -1061,11 +1134,11 @@ function init() {
   song1.innerHTML = "Smutne zamszowe łańcuchy, Elvisa Pagelya";
   song2.innerHTML = "Wielkie obiekty w ogniu, Jerry'ego JSON Lewisa";
   song3.innerHTML = "Pierwszy wiersz kodu, Johnny'ego JavaScripta";
-// --
+  // --
   var planet = document.getElementById("redplanet");
   planet.innerHTML = "Alarm czerwony: rozpoczęto ostrzał z fazerów";
   planet.setAttribute("class", "redtext");
-// --
+  // --
   var scoop = document.getElementById("raspberry");
   var altText = scoop.getAttribute("alt");
   if (altText == null) {
@@ -1090,8 +1163,8 @@ if (y == false && x == true) {
 }
 
 var customer = {
-  name: "Joanna",
-}
+  name: "Joanna"
+};
 if (customer.phoneNumber == undefined) {
   console.log("brak numeru telefonu");
 }
@@ -1102,25 +1175,25 @@ var test3 = true;
 var test4 = {};
 var test5 = [];
 var test6;
-var test7 = {"abcdef": 123};
+var test7 = { "abcdef": 123 };
 var test8 = ["abcdef", 123];
 function test9() {
-  return "abcdef"
+  return "abcdef";
 }
 var test10 = null;
 
-console.log(typeof test1);
-console.log(typeof test2);
-console.log(typeof test3);
-console.log(typeof test4);
-console.log(typeof test5);
-console.log(typeof test6);
-console.log(typeof test7);
-console.log(typeof test8);
-console.log(typeof test9);
-console.log(typeof test10);
+console.log(typeof test1 === "undefined" ? "undefined" : _typeof(test1));
+console.log(typeof test2 === "undefined" ? "undefined" : _typeof(test2));
+console.log(typeof test3 === "undefined" ? "undefined" : _typeof(test3));
+console.log(typeof test4 === "undefined" ? "undefined" : _typeof(test4));
+console.log(typeof test5 === "undefined" ? "undefined" : _typeof(test5));
+console.log(typeof test6 === "undefined" ? "undefined" : _typeof(test6));
+console.log(typeof test7 === "undefined" ? "undefined" : _typeof(test7));
+console.log(typeof test8 === "undefined" ? "undefined" : _typeof(test8));
+console.log(typeof test9 === "undefined" ? "undefined" : _typeof(test9));
+console.log(typeof test10 === "undefined" ? "undefined" : _typeof(test10));
 
-var ay = 0/0;
+var ay = 0 / 0;
 var by = "food" * 1000;
 var cy = Math.sqrt(-9);
 
@@ -1151,7 +1224,7 @@ if (num1 == num2) {
 // 1. Liczba i łańcuch znaków
 
 var compare1 = 99;
-var compare2 = "vanilla"
+var compare2 = "vanilla";
 console.log(compare1 == compare2);
 
 //2. liczba i wartość logiczna
@@ -1205,7 +1278,7 @@ var mini = "10" - 5;
 console.log(mini);
 var conc = 1 + 2 + " pizza";
 var conc2 = 1 + (2 + " pizza");
-var conc3 = (1 + 2) + " pizza";
+var conc3 = 1 + 2 + " pizza";
 console.log(conc, conc2, conc3);
 var love = -true + " love is sometimes " + -false;
 console.log(love);
@@ -1214,5 +1287,8 @@ console.log("43" + 43);
 console.log(2 + "1 1");
 console.log("1" - "1");
 console.log(7 + Number("8"));
-console.log("hi");
+console.log("hi there");
 //--------------------------------
+
+/***/ })
+/******/ ]);
