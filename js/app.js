@@ -1125,8 +1125,55 @@ var by = "food" * 1000;
 var cy = Math.sqrt(-9);
 
 console.log(ay);
+
 if (isNaN(ay)) {
   ay = 0;
 }
 console.log(ay);
 //---------------------------------------
+
+if (99 == "99") {
+  console.log("Liczba jest równa łańcuchowi naków");
+} else {
+  console.log("Przecie licba nie jest równa łańcuchowi znaków");
+}
+
+var num1 = 1;
+var num2 = "1";
+
+if (num1 == num2) {
+  console.log("równe");
+}
+
+//---------------------------------------
+//Konwersje operandów operatora równości:
+
+// 1. Liczba i łańcuch znaków
+
+var compare1 = 99;
+var compare2 = "vanilla"
+console.log(compare1 == compare2);
+
+//2. liczba i wartość logiczna
+
+var compare3 = 1;
+var compare4 = true;
+console.log(compare3 == compare4);
+
+//Liczba jako string i wartość logiczna
+
+var compare5 = "1";
+var compare6 = true;
+console.log(compare5 == compare6);
+
+// 3. Porównanie wartości null i undefined
+
+var compare7 = undefined;
+var compare8 = null;
+console.log(compare7 == compare8);
+
+// 4. porównanie liczby z pustym łańcuchem znaków
+
+var compare9 = 1;
+var compare10 = "";
+console.log(compare9 == compare10);
