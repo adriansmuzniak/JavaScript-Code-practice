@@ -1177,3 +1177,29 @@ console.log(compare7 == compare8);
 var compare9 = 1;
 var compare10 = "";
 console.log(compare9 == compare10);
+
+//---------------------------------
+console.log("42" == 42);
+console.log(0 == "0");
+console.log("0" == false);
+console.log("true" == true);
+console.log("0" == false);
+console.log(true == ("1" !== 1));
+console.log(42 === "42");
+console.log(0 === "0");
+console.log("0" === false);
+console.log(true === "true");
+console.log(true === (1 === "1"));
+
+//---------------------------------
+
+var addi = 3 + "4";
+console.log(addi);
+var plussi = "4" + 3;
+console.log(plussi);
+var multi = 3 ** "4";
+console.log(multi);
+var divi = 80 / "10";
+console.log(divi);
+var mini = "10" - 5;
+console.log(mini);
