@@ -1372,7 +1372,49 @@ function lieDetectorTest() {
 }
 
 var numberOfLies = lieDetectorTest();
-console.log("Skłamałeś " + numberOfLies + " ilość razy");
+console.log("Skłamałeś " + numberOfLies + " razy");
 if (numberOfLies >= 3) {
   console.log("Winny wszystkich zarzutów!");
+}
+
+//-----------------------------
+
+var someRandomText = "PISZĄC WIADOMOŚCI, NIE POWIENIENEŚ UŻYWAĆ WIELKICH LITER"
+var someRandomTextWithLowerCases = someRandomText.toLowerCase();
+var someRandomText2 = "Pisząc tylko małymi literami możesz nie osiągnąć efektu wzmocnienia";
+var someRandomTextWithUpperCases = someRandomText2.toUpperCase();
+
+if (someRandomTextWithLowerCases.length > 0 && someRandomTextWithUpperCases.length > 0) {
+  console.log(someRandomTextWithLowerCases + " ale " + someRandomTextWithUpperCases);
+}
+
+//-----------------------------
+
+var emot = "XOxxOO";
+var hugs = 0;
+var kisses = 0;
+
+emot = emot.trim();
+emot = emot.toUpperCase();
+
+for (i = 0; i < emot.length; i++) {
+  if (emot.charAt(i) === "X") {
+    hugs++;
+  } else if (emot.charAt(i) === "O") {
+    kisses++;
+  }
+}
+console.log(hugs);
+
+//-----------------------
+
+var names = "janka";
+var phone = "867-5309";
+var fact = "To liczba pierwsza";
+var songName = phone + "/" + names;
+var indexs = phone.indexOf("-");
+
+if (fact.substring(10,18) === "pierwsza") {
+  
+  console.log(fact.substring(10,18));
 }
