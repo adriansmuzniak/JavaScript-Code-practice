@@ -1288,6 +1288,12 @@ if ("") {
 } else {
   console.log("pusty string ma wartość jest FALSE");
 }
+//niepusty string!
+if (" ") {
+  console.log("pusty string ma wartość jest TRUE");
+} else {
+  console.log("pusty string ma wartość jest FALSE");
+}
 
 //Not a Number
 if (NaN) {
@@ -1329,4 +1335,44 @@ if ("somewordsinstring") {
   console.log("niepusty string ma wartość TRUE");
 } else {
   console.log("Niepusty string ma wartość FALSE");
+}
+
+//--------------------------------------------------
+
+function lieDetectorTest() {
+  var lies = 0;
+
+  var stolenDiamonds = {};
+  if (stolenDiamonds) {
+    console.log("Ukradłeś diament!");
+    lies++;
+  }
+  var car = {
+    keysInPocket: null
+  };
+  if (car.emptyGasTank) {
+    console.log("Jechałeś także skradzionym samochodem!");
+    lies++;
+  }
+  var foundYouAtTheCrimeScene = [];
+  if (foundYouAtTheCrimeScene) {
+    console.log("To oczywisty dowód przestępstwa");
+    lies++;
+  }
+  if (foundYouAtTheCrimeScene[0]) {
+    console.log("Znaleziono przy Tobie skradziony diament");
+    lies++;
+  }
+  var yourName = " ";
+  if (yourName) {
+    console.log("Dodatkowo skłamałeś podając swoje personalia");
+    lies++;
+  }
+  return lies;
+}
+
+var numberOfLies = lieDetectorTest();
+console.log("Skłamałeś " + numberOfLies + " ilość razy");
+if (numberOfLies >= 3) {
+  console.log("Winny wszystkich zarzutów!");
 }
