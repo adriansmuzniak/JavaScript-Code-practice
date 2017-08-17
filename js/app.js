@@ -1259,8 +1259,74 @@ var fiat2 = {
 
  //-------------------------------------
 
+ //var ma wartość undefined
  var testThis;
- if (!testThis) {
-   testThis = true;
+ if (testThis) {
+   console.log("Zadeklarowana zmienna bez wartości jest TRUE");
+ } else {
+   console.log("Zadeklarowana zmienna bez wartości jest FALSE");
  }
- console.log(testThis);
+
+//null
+var element = document.getElementById("elementThatDoesntExists");
+if (element) {
+  console.log("Null przyjmuje wartość TRUE");
+} else {
+  console.log("Null przyjmuje wartość FALSE");
+}
+
+//0
+if (0) {
+  console.log("Zero ma wartość TRUE");
+} else {
+  console.log("Zero ma wartość FALSE");
+}
+
+//pusty string
+if ("") {
+  console.log("pusty string ma wartość jest TRUE");
+} else {
+  console.log("pusty string ma wartość jest FALSE");
+}
+
+//Not a Number
+if (NaN) {
+  console.log("NaN przyjmuje wartość TRUE");
+} else {
+  console.log("Nan przyjmuje wartość FALSE");
+}
+
+//Infinity
+if (Infinity) {
+  console.log("Infinity przyjmuje wartość TRUE");
+} else {
+  console.log("Infinity przyjmuje wartość FALSE");
+}
+
+//Boolean - FALSE
+if (false) {
+  console.log("False przyjmuje wartość TRUE");
+} else {
+  console.log("False przyjmuje wartość FALSE");
+}
+
+//Tablica
+if ([]) {
+  console.log("Tablica przyjmuje wartość TRUE");
+} else {
+  console.log("Tablica przyjmuje wartość FALSE");
+}
+
+//Wyrażenie liczbowe
+if ((2 > 3 || 3 > 1 || 5 > 3) && (4 > 3 || 5 >=3)  ) {
+  console.log("Liczba 1 przyjmuje wartość TRUE");
+} else {
+  console.log("Liczba 1 przyjmuje wartość FALSE");
+}
+
+//Pełny string
+if ("somewordsinstring") {
+  console.log("niepusty string ma wartość TRUE");
+} else {
+  console.log("Niepusty string ma wartość FALSE");
+}
