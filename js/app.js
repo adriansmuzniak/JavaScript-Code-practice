@@ -1415,6 +1415,14 @@ var songName = phone + "/" + names;
 var indexs = phone.indexOf("-");
 
 if (fact.substring(10,18) === "pierwsza") {
-  
-  console.log(fact.substring(10,18));
+    console.log(fact.substring(10,18));
+}
+
+//-----------------------
+
+var superInput = "janka@bardzosprytni.com.pl"
+for (var i = 0; i < superInput.length; i++) {
+  if (superInput.charAt(i) === "@") {
+    console.log(" Znak specjalny @ znajduje się na pozycji nr: " + i);
+  }
 }
