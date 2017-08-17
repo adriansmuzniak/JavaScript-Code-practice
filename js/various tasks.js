@@ -8,3 +8,7 @@ if(i + 2 > 3) {
   console.log(b);
 console.log(i);
 }
+
+// answer: false;
+
+//-------------------

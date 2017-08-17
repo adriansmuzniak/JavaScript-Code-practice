@@ -1213,6 +1213,54 @@ console.log(Infinity);
 console.log("43" + 43);
 console.log(2 + "1 1");
 console.log("1" - "1");
-console.log(7 + Number("8"));
-console.log("hi");
+console.log(7 + Number("10"));
+console.log("hi there");
 //--------------------------------
+
+var s = 10;
+var sy = --s + --s + s;
+console.log(sy);
+
+function findCarInLot(car) {
+  for (var i = 0; i < lot.length; i++) {
+    if (car == lot[i]) {
+      return "Miejsce w tablicy elementu " + [i] + " to " + i;
+    }
+  }
+  // return -1; //don't why they put it in here...?
+}
+
+var chevy1 = {
+  make: "Chevy",
+  model: "Bel Air"
+};
+var taxi = {
+  make: "SieMoCorp",
+  model: "Taxi"
+}
+var fiat1 = {
+  make: "Fiat",
+  model: "500"
+}
+var fiat2 = {
+  make: "Fiat",
+  model: "500"
+}
+
+ var lot = [chevy1, taxi, fiat1, fiat2];
+ var loc1 = findCarInLot(fiat2);
+ var loc2 = findCarInLot(taxi);
+ var loc3 = findCarInLot(chevy1);
+ var loc4 = findCarInLot(fiat1);
+ console.log(loc1);
+ console.log(loc2);
+ console.log(loc3);
+ console.log(loc4);
+
+ //-------------------------------------
+
+ var testThis;
+ if (!testThis) {
+   testThis = true;
+ }
+ console.log(testThis);
