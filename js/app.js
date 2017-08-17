@@ -1419,10 +1419,19 @@ if (fact.substring(10,18) === "pierwsza") {
 }
 
 //-----------------------
-
+//Właściwość Length
 var superInput = "janka@bardzosprytni.com.pl"
 for (var i = 0; i < superInput.length; i++) {
   if (superInput.charAt(i) === "@") {
     console.log(" Znak specjalny @ znajduje się na pozycji nr: " + i);
   }
 }
+
+//Właściwość indexOf
+var phrase = "czy to kot, czy coś innego?";
+var indexOfCat = phrase.indexOf("kot");
+var indexOfIf = phrase.indexOf("czy", 7);
+var indexofDog = phrase.indexOf("Pies");
+console.log("Słowo zapisano zaczynając od indexu " + indexOfCat);
+console.log("Słowo czy zapisano, zaczynając od indexu " + indexOfIf);
+console.log("Słowo pies zapisano zaczynając od indexu " + indexofDog);
