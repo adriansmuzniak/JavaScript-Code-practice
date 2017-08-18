@@ -1419,7 +1419,8 @@ if (fact.substring(10,18) === "pierwsza") {
 }
 
 //-----------------------
-//Właściwość Length
+
+//metoda Length
 var superInput = "janka@bardzosprytni.com.pl"
 for (var i = 0; i < superInput.length; i++) {
   if (superInput.charAt(i) === "@") {
@@ -1427,7 +1428,7 @@ for (var i = 0; i < superInput.length; i++) {
   }
 }
 
-//Właściwość indexOf
+//metoda indexOf
 var phrase = "czy to kot, czy coś innego?";
 var indexOfCat = phrase.indexOf("kot");
 var indexOfIf = phrase.indexOf("czy", 7);
@@ -1435,3 +1436,51 @@ var indexofDog = phrase.indexOf("Pies");
 console.log("Słowo zapisano zaczynając od indexu " + indexOfCat);
 console.log("Słowo czy zapisano, zaczynając od indexu " + indexOfIf);
 console.log("Słowo pies zapisano zaczynając od indexu " + indexofDog);
+
+//metoda substpring
+var data1 = "imię|telefon|adres";
+var data1Val = data1.substring(5,12);
+var data1Val2 = data1.substring(13);
+console.log("Wybrany fragment to " + data1Val);
+console.log("Wybrany fragment to " + data1Val2);
+
+//metoda split
+var dataToAnalyze = "imię| nazwisko| telefon| adres| kontakt";
+var vals = dataToAnalyze.split("|");
+console.log("Oto tablica z podzielony łańcuchem: " + vals);
+
+//metoda slice
+var textToSlice = "Oto przykładowy łańcuch na którym uzyjemy metody slice";
+var sliceMethod = textToSlice.slice(4,9);
+console.log(sliceMethod);
+
+//------------------------------------
+
+// metoda1
+function validate(phoneNumber) {
+  if (phoneNumber.length !== 8) {
+    return false;
+  }
+  for (i=0; i < phoneNumber.length; i++) {
+    if (i === 3) {
+      if (phoneNumber.charAt(i) !== "-") {
+        return false;
+      }
+    } else if (isNaN(phoneNumber.charAt(i))) {
+      return false;
+    }
+  }
+}
+// metoda2
+function validate2(phoneNumber) {
+  if (phoneNumber.length !== 8) {
+    return false;
+  }
+  var first = phoneNumber.substring(0,3);
+  var second = phoneNumber.substring(4);
+  if (phoneNumber.charAt(3) !== "-" || isNaN(first) || isNaN(second)) {
+    return false;
+  }
+  return true;
+}
+//-------------------------------------
