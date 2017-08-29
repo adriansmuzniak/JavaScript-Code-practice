@@ -3,20 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <title>Zgadnij co to za obraz</title>
-    <style> body { margin: 20px;} img {cursor: pointer;} </style>
+    <style> body { margin: 20px;} img {cursor: pointer; margin: 5px; width:20%; height: 10%;} </style>
     <script>
 
     window.onload = init;
     function init() {
-      var image = document.getElementById("zero");
-      console.log(image);
-      image.onclick = showAnswer;
+      var images = document.getElementsByTagName("img");
+      for (var i = 0; i < images.length; i++) {
+          images[i].onclick = showAnswer;
+      }
     }
 
     function showAnswer() {
-      var image = document.getElementById("zero");
-      image.src = "img/zero.jpg"
-      console.log(this);
+      var id = this.id;
+      this.src = "img/" + id + ".jpg";
     }
 
      </script>
@@ -24,5 +24,11 @@
 </head>
 <body>
   <img id="zero" src="img/zeroblur.jpg">
+  <img id="one" src="img/oneblur.jpg">
+  <img id="two" src="img/twoblur.jpg">
+  <img id="three" src="img/threeblur.jpg">
+  <img id="four" src="img/fourblur.jpg">
+  <img id="five" src="img/fiveblur.jpg">
+
 </body>
 </html>
