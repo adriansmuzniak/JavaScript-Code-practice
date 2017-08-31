@@ -14,9 +14,21 @@
       }
     }
 
-    function showAnswer() {
-      var id = this.id;
-      this.src = "img/" + id + ".jpg";
+    function showAnswer(eventObj) {
+      var imageTarget = eventObj.target;
+      var imageType = eventObj.type;
+      var imageTimeStamp = eventObj.timeStamp;
+      var imageKeyCode = eventObj.keyCode;
+      var imageClientX = eventObj.clientX;
+      var imageClientY = eventObj.clientY;
+      var imageTouches = eventObj.touches;
+      console.log(imageTarget);
+      console.log(imageType);
+      console.log(imageTimeStamp);
+      console.log(imageKeyCode);
+      console.log(imageClientX);
+      console.log(imageClientY);
+      console.log(imageTouches);
     }
 
      </script>
