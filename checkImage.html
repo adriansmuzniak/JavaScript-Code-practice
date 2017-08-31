@@ -28,8 +28,20 @@
       console.log(imageKeyCode);
       console.log(imageClientX);
       console.log(imageClientY);
-      console.log(imageTouches);
+
+      var name = imageTarget.id;
+      name = "img/" + name + ".jpg";
+      imageTarget.src = name;
+
+      setTimeout(function() {
+        var name = imageTarget.id;
+        name = "img/" + name + "blur.jpg";
+        imageTarget.src = name;
+
+      }, 3000)
     }
+
+
 
      </script>
 
