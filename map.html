@@ -8,16 +8,27 @@
 
     window.onload = init;
     function init() {
-
-
+      var map = document.getElementById("map");
+      map.onmousemove = showCoords;
+      map.onmouseout = hideCoords;
     }
 
+    function showCoords(eventObj) {
+      var map = document.getElementById("cords");
+      var x = eventObj.clientX;
+      var y = eventObj.clientY;
+      map.innerHTML = "Współrzędne na mapie: " + x + "," + y;
+    }
+
+    function hideCoords(eventObj) {
+      var map = document.getElementById("cords");
+      map.innerHTML = "Przesuń wskaźnik myszy na mapę, aby odczytać współrzędne..."
+    }
     </script>
 
 </head>
 <body>
   <img id="map" src="img/map.jpg">
-
-
+  <p id="cords">Przesuwń wskaźnik myszy na mapę, aby odczytać współrzędne...</p>
 </body>
 </html>
