@@ -33,14 +33,14 @@
       name = "img/" + name + ".jpg";
       imageTarget.src = name;
 
-      setTimeout(function() {
-        var name = imageTarget.id;
-        name = "img/" + name + "blur.jpg";
-        imageTarget.src = name;
-
-      }, 3000)
+      setTimeout(reblur, 2000, imageTarget);
     }
 
+    function reblur(imageTarget) {
+      var name = imageTarget.id;
+      name = "img/" + name + "blur.jpg";
+      imageTarget.src = name;
+    }
 
 
      </script>
