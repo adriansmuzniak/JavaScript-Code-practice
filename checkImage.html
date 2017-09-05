@@ -7,8 +7,22 @@
     <script>
 
     window.onload = init;
+    window.onresize = resize;
+
+    function resize() {
+      var element = document.getElementById("display");
+      var element2 = document.getElementsByTagName("img");
+      for (var i=0; i<element2.length; i++) {
+        element2[i].style.display = "none";
+      }
+      // console.log(element2);
+      element.innerHTML = element.innerHTML + " To łaskocze! ";
+      // element2.style. = "none";
+      // console.log(element2);
+    }
 
     function init() {
+      console.log(newFunkTest);
       var images = document.getElementsByTagName("img");
       for (var i = 0; i < images.length; i++) {
           images[i].onmouseover = showAnswer;
@@ -47,6 +61,15 @@
       // console.log(name);
     }
 
+    var newFunk = function(x, y, z) {
+      var sum = x + y;
+      var count = sum * z;
+      return count
+    }
+
+    var newFunkTest = newFunk(5, 10, 5);
+    // console.log(newFunkTest);
+
 
      </script>
 
@@ -58,6 +81,9 @@
   <img id="three" src="img/threeblur.jpg">
   <img id="four" src="img/fourblur.jpg">
   <img id="five" src="img/fiveblur.jpg">
+
+<p id="display">Cokolwiek robisz, nie zmieniaj wielkości okna, ostrzegam!!</p>
+
 
 </body>
 </html>
