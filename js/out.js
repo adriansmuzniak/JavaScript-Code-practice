@@ -102,7 +102,7 @@ console.log(x);
 
 //---------------------------------------
 
-matrix = [];
+var matrix = [];
 matrix.push([1, 2, 3]);
 matrix.push([4, 5, 6]);
 matrix.push([7, 8, 9]);
@@ -559,7 +559,7 @@ console.log(clunkCounter);
 //----------------------------------
 
 var balance = 10500; //ZMIENNA GLOBALNA
-var camerOn = true;
+var cameraOn = true;
 
 function steal(balance, amount) {
   //PRZESŁONIĘCIE PARAMETRU BALANCE - BŁĄD
@@ -628,6 +628,46 @@ console.log(0 && true);
 console.log(1 && false);
 console.log(undefined && 1);
 //-----------------------------------------
+
+// //Gra w okręty - początek
+//
+// // położenie okrętu
+// var randomLoc = Math.floor(Math.random() * 5);
+// var location1 = randomLoc;
+// var location2 = location1 + 1;
+// var location3 = location2 + 1;
+//
+// // próby zatopienia okrętu
+// var guess; //wskazanie do sprawdzenia
+// var guesses = 0; //liczba prób
+// var hits = 0; //trafione
+//
+// //wartość - czy okręt został zatopiony?
+// var isSunk = false;
+//
+//   while (isSunk == false) {
+//       guess = prompt("Gotów? Cel, pal! (podaj liczbę z zakresu 0-6):");
+//       if (guess < 0 || guess > 6) {
+//           alert("Proszę podać prawidłową liczbę z zakresu od 0-6!");
+//       } else {
+//         guesses = guesses + 1;
+//
+//         if (guess == location1 || guess == location2 || guess == location3) {
+//           hits = hits + 1;
+//           document.write("TRAFIONY!!");
+//           if (hits == 3) {
+//             isSunk == true;
+//             document.write("Hej, zatopiłeś mój okręt!");
+//             var stats = "Potrzebowałeś " + guesses + " ruchów, aby zatopić okręt. Twoja efektywność strzelecka wynosi: " + (3/guesses) + ".";
+//             document.write(stats);
+//           }
+//         } else if (guess == null || guess == false) {
+//           document.write("Ej, podaj jakąś liczbę")
+//         } else {
+//           document.write("PUDŁO!")
+//         }
+//       }
+//   }
 
 //-----------------------------------------
 
@@ -1108,15 +1148,15 @@ console.log(eightBall.look());
 
 //---------------------------------------------
 
-var access = document.getElementById("code9");
-var code = access.innerHTML;
-code = code + "północy";
-console.log(code);
-
-var access2 = document.getElementById("code4");
-var code2 = access2.innerHTML;
-code2 = code2 + " południu";
-console.log("code2");
+// var access = document.getElementById("code9");
+// var code = access.innerHTML;
+// code = code + "północy";
+// console.log(code);
+//
+// var access2 = document.getElementById("code4");
+// var code2 = access2.innerHTML;
+// code2 = code2 + " południu";
+// console.log("code2");
 
 //-------------------------------------------
 
@@ -1286,9 +1326,298 @@ console.log(Infinity);
 console.log("43" + 43);
 console.log(2 + "1 1");
 console.log("1" - "1");
-console.log(7 + Number("8"));
+console.log(7 + Number("10"));
 console.log("hi there");
 //--------------------------------
+
+var s = 10;
+var sy = --s + --s + s;
+console.log(sy);
+
+function findCarInLot(car) {
+  for (var i = 0; i < lot.length; i++) {
+    if (car == lot[i]) {
+      return "Miejsce w tablicy elementu " + [i] + " to " + i;
+    }
+  }
+  // return -1; //don't why they put it in here...?
+}
+
+var chevy1 = {
+  make: "Chevy",
+  model: "Bel Air"
+};
+var taxi = {
+  make: "SieMoCorp",
+  model: "Taxi"
+};
+var fiat1 = {
+  make: "Fiat",
+  model: "500"
+};
+var fiat2 = {
+  make: "Fiat",
+  model: "500"
+};
+
+var lot = [chevy1, taxi, fiat1, fiat2];
+var loc1 = findCarInLot(fiat2);
+var loc2 = findCarInLot(taxi);
+var loc3 = findCarInLot(chevy1);
+var loc4 = findCarInLot(fiat1);
+console.log(loc1);
+console.log(loc2);
+console.log(loc3);
+console.log(loc4);
+
+//-------------------------------------
+
+//var ma wartość undefined
+var testThis;
+if (testThis) {
+  console.log("Zadeklarowana zmienna bez wartości jest TRUE");
+} else {
+  console.log("Zadeklarowana zmienna bez wartości jest FALSE");
+}
+
+//null
+var element = document.getElementById("elementThatDoesntExists");
+if (element) {
+  console.log("Null przyjmuje wartość TRUE");
+} else {
+  console.log("Null przyjmuje wartość FALSE");
+}
+
+//0
+if (0) {
+  console.log("Zero ma wartość TRUE");
+} else {
+  console.log("Zero ma wartość FALSE");
+}
+
+//pusty string
+if ("") {
+  console.log("pusty string ma wartość jest TRUE");
+} else {
+  console.log("pusty string ma wartość jest FALSE");
+}
+//niepusty string!
+if (" ") {
+  console.log("pusty string ma wartość jest TRUE");
+} else {
+  console.log("pusty string ma wartość jest FALSE");
+}
+
+//Not a Number
+if (NaN) {
+  console.log("NaN przyjmuje wartość TRUE");
+} else {
+  console.log("Nan przyjmuje wartość FALSE");
+}
+
+//Infinity
+if (Infinity) {
+  console.log("Infinity przyjmuje wartość TRUE");
+} else {
+  console.log("Infinity przyjmuje wartość FALSE");
+}
+
+//Boolean - FALSE
+if (false) {
+  console.log("False przyjmuje wartość TRUE");
+} else {
+  console.log("False przyjmuje wartość FALSE");
+}
+
+//Tablica
+if (true) {
+  console.log("Tablica przyjmuje wartość TRUE");
+} else {
+  console.log("Tablica przyjmuje wartość FALSE");
+}
+
+//Wyrażenie liczbowe
+if ((2 > 3 || 3 > 1 || 5 > 3) && (4 > 3 || 5 >= 3)) {
+  console.log("Liczba 1 przyjmuje wartość TRUE");
+} else {
+  console.log("Liczba 1 przyjmuje wartość FALSE");
+}
+
+//Pełny string
+if ("somewordsinstring") {
+  console.log("niepusty string ma wartość TRUE");
+} else {
+  console.log("Niepusty string ma wartość FALSE");
+}
+
+//--------------------------------------------------
+
+function lieDetectorTest() {
+  var lies = 0;
+
+  var stolenDiamonds = {};
+  if (stolenDiamonds) {
+    console.log("Ukradłeś diament!");
+    lies++;
+  }
+  var car = {
+    keysInPocket: null
+  };
+  if (car.emptyGasTank) {
+    console.log("Jechałeś także skradzionym samochodem!");
+    lies++;
+  }
+  var foundYouAtTheCrimeScene = [];
+  if (foundYouAtTheCrimeScene) {
+    console.log("To oczywisty dowód przestępstwa");
+    lies++;
+  }
+  if (foundYouAtTheCrimeScene[0]) {
+    console.log("Znaleziono przy Tobie skradziony diament");
+    lies++;
+  }
+  var yourName = " ";
+  if (yourName) {
+    console.log("Dodatkowo skłamałeś podając swoje personalia");
+    lies++;
+  }
+  return lies;
+}
+
+var numberOfLies = lieDetectorTest();
+console.log("Skłamałeś " + numberOfLies + " razy");
+if (numberOfLies >= 3) {
+  console.log("Winny wszystkich zarzutów!");
+}
+
+//-----------------------------
+
+var someRandomText = "PISZĄC WIADOMOŚCI, NIE POWIENIENEŚ UŻYWAĆ WIELKICH LITER";
+var someRandomTextWithLowerCases = someRandomText.toLowerCase();
+var someRandomText2 = "Pisząc tylko małymi literami możesz nie osiągnąć efektu wzmocnienia";
+var someRandomTextWithUpperCases = someRandomText2.toUpperCase();
+
+if (someRandomTextWithLowerCases.length > 0 && someRandomTextWithUpperCases.length > 0) {
+  console.log(someRandomTextWithLowerCases + " ale " + someRandomTextWithUpperCases);
+}
+
+//-----------------------------
+
+var emot = "XOxxOO";
+var hugs = 0;
+var kisses = 0;
+
+emot = emot.trim();
+emot = emot.toUpperCase();
+
+for (i = 0; i < emot.length; i++) {
+  if (emot.charAt(i) === "X") {
+    hugs++;
+  } else if (emot.charAt(i) === "O") {
+    kisses++;
+  }
+}
+console.log(hugs);
+
+//-----------------------
+
+var names = "janka";
+var phone = "867-5309";
+var fact = "To liczba pierwsza";
+var songName = phone + "/" + names;
+var indexs = phone.indexOf("-");
+
+if (fact.substring(10, 18) === "pierwsza") {
+  console.log(fact.substring(10, 18));
+}
+
+//-----------------------
+
+//metoda Length
+var superInput = "janka@bardzosprytni.com.pl";
+for (var i = 0; i < superInput.length; i++) {
+  if (superInput.charAt(i) === "@") {
+    console.log(" Znak specjalny @ znajduje się na pozycji nr: " + i);
+  }
+}
+
+//metoda indexOf
+var phrase = "czy to kot, czy coś innego?";
+var indexOfCat = phrase.indexOf("kot");
+var indexOfIf = phrase.indexOf("czy", 7);
+var indexofDog = phrase.indexOf("Pies");
+console.log("Słowo zapisano zaczynając od indexu " + indexOfCat);
+console.log("Słowo czy zapisano, zaczynając od indexu " + indexOfIf);
+console.log("Słowo pies zapisano zaczynając od indexu " + indexofDog);
+
+//metoda substpring
+var data1 = "imię|telefon|adres";
+var data1Val = data1.substring(5, 12);
+var data1Val2 = data1.substring(13);
+console.log("Wybrany fragment to " + data1Val);
+console.log("Wybrany fragment to " + data1Val2);
+
+//metoda split
+var dataToAnalyze = "imię| nazwisko| telefon| adres| kontakt";
+var vals = dataToAnalyze.split("|");
+console.log("Oto tablica z podzielony łańcuchem: " + vals);
+
+//metoda slice
+var textToSlice = "Oto przykładowy łańcuch na którym uzyjemy metody slice";
+var sliceMethod = textToSlice.slice(4, 9);
+console.log(sliceMethod);
+
+//------------------------------------
+
+// metoda1
+function validate(phoneNumber) {
+  if (phoneNumber.length !== 8) {
+    return false;
+  }
+  for (i = 0; i < phoneNumber.length; i++) {
+    if (i === 3) {
+      if (phoneNumber.charAt(i) !== "-") {
+        return false;
+      }
+    } else if (isNaN(phoneNumber.charAt(i))) {
+      return false;
+    }
+  }
+}
+// metoda2
+function validate2(phoneNumber) {
+  if (phoneNumber.length !== 8) {
+    return false;
+  }
+  var first = phoneNumber.substring(0, 3);
+  var second = phoneNumber.substring(4);
+  if (phoneNumber.charAt(3) !== "-" || isNaN(first) || isNaN(second)) {
+    return false;
+  }
+  return true;
+}
+//-------------------------------------
+
+function Duck(sound) {
+  this.sound = sound;
+  this.quack = function () {
+    console.log(this.sound);
+  };
+}
+
+var toy = new Duck("kwa kwa");
+toy.quack();
+
+console.log(typeof toy === "undefined" ? "undefined" : _typeof(toy));
+console.log(toy instanceof Duck);
+
+//------------------------------------
+
+function pageLoaderHandler() {
+  console.log("Ja żyję");
+}
+
+window.onload = pageLoaderHandler;
 
 /***/ })
 /******/ ]);

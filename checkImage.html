@@ -7,10 +7,12 @@
     <script>
 
     window.onload = init;
+
     function init() {
       var images = document.getElementsByTagName("img");
       for (var i = 0; i < images.length; i++) {
-          images[i].onclick = showAnswer;
+          images[i].onmouseover = showAnswer;
+          images[i].onmouseout = reblur;
       }
     }
 
@@ -18,14 +20,14 @@
       var imageTarget = eventObj.target;
       var imageType = eventObj.type;
       var imageTimeStamp = eventObj.timeStamp;
-      var imageKeyCode = eventObj.keyCode;
+      // var imageKeyCode = eventObj.keyCode;
       var imageClientX = eventObj.clientX;
       var imageClientY = eventObj.clientY;
       var imageTouches = eventObj.touches;
       console.log(imageTarget);
       console.log(imageType);
       console.log(imageTimeStamp);
-      console.log(imageKeyCode);
+      // console.log(imageKeyCode);
       console.log(imageClientX);
       console.log(imageClientY);
 
@@ -33,13 +35,16 @@
       name = "img/" + name + ".jpg";
       imageTarget.src = name;
 
-      setTimeout(reblur, 2000, imageTarget);
+      // setTimeout(reblur, 2000, imageTarget);
     }
 
-    function reblur(imageTarget) {
+    function reblur(eventObj) {
+      var imageTarget = eventObj.target;
       var name = imageTarget.id;
-      name = "img/" + name + "blur.jpg";
-      imageTarget.src = name;
+      imageTarget.src = "img/" + name + "blur.jpg";
+      // imageTarget.src = name;
+
+      // console.log(name);
     }
 
 

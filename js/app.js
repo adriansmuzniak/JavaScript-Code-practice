@@ -1075,15 +1075,15 @@ console.log(eightBall.look());
 
 //---------------------------------------------
 
-var access = document.getElementById("code9");
-var code = access.innerHTML;
-code = code + "północy";
-console.log(code);
-
-var access2 = document.getElementById("code4");
-var code2 = access2.innerHTML;
-code2 = code2 + " południu";
-console.log("code2");
+// var access = document.getElementById("code9");
+// var code = access.innerHTML;
+// code = code + "północy";
+// console.log(code);
+//
+// var access2 = document.getElementById("code4");
+// var code2 = access2.innerHTML;
+// code2 = code2 + " południu";
+// console.log("code2");
 
 //-------------------------------------------
 
