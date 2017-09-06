@@ -61,11 +61,22 @@ favoritePhrase === 'Love That!' ? console.log('I love that!') : console.log("I d
 
 //-------------------
 
-const takeOrder = () => {
-  console.log("Order: pizza!");
-}
+let orderCount = 0;
 
-takeOrder();
+const takeOrder = (topping, crustType) => {
+  orderCount++;
+  console.log('Order: ' + crustType + ' pizza topped with ' + topping);
+};
+
+takeOrder('mushroom', 'thin crust');
+takeOrder('spinach', 'whole wheat');
+takeOrder('pepperoni', 'brooklyn style');
+
+const getSubTotal = (itemCount) => {
+  return itemCount * 7.5;
+};
+
+console.log(getSubTotal(orderCount));
 
 const multiplyYouFool = (x, y, z) => {
   let damn = ((x * y) * 1000) / 2000003;
@@ -74,3 +85,5 @@ const multiplyYouFool = (x, y, z) => {
 
 const sth = multiplyYouFool(30, 20, 10);
 console.log(sth);
+
+//-------------------
