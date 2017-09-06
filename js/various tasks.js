@@ -99,3 +99,22 @@ const sth = multiplyYouFool(30, 20, 10);
 console.log(sth);
 
 //-------------------
+
+const color = 'blue'
+
+const colorOfSky = () => {
+  return color; // blue
+};
+
+console.log(colorOfSky()); // blue
+
+//-------------------
+
+const satellite = 'The Moon';
+const galaxy = 'The Milky Way';
+
+let stars = 'North Star';
+
+const myNightSky = () => {
+  return 'Night Sky: ' + satellite + ', ' + stars + ', ' + galaxy;
+}
