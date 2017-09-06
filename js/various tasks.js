@@ -96,6 +96,7 @@ const multiplyYouFool = (x, y, z) => {
 }
 
 const sth = multiplyYouFool(30, 20, 10);
+const sth = multiplyYouFool(30, 20, 100);
 console.log(sth);
 
 //-------------------
@@ -118,3 +119,5 @@ let stars = 'North Star';
 const myNightSky = () => {
   return 'Night Sky: ' + satellite + ', ' + stars + ', ' + galaxy;
 }
+
+//-------------------
