@@ -61,7 +61,7 @@ favoritePhrase === 'Love That!' ? console.log('I love that!') : console.log("I d
 
 //-------------------
 
-let orderCount = 0;
+let orderCount = 3;
 
 const takeOrder = (topping, crustType) => {
   orderCount++;
@@ -76,7 +76,19 @@ const getSubTotal = (itemCount) => {
   return itemCount * 7.5;
 };
 
+const getTax = (tax) => {
+  return getSubTotal(orderCount) * 0.06;
+}
+
+const getTotal = () => {
+  return getSubTotal(orderCount) + getTax();
+}
+
+
 console.log(getSubTotal(orderCount));
+console.log(getTotal());
+
+//------------------------
 
 const multiplyYouFool = (x, y, z) => {
   let damn = ((x * y) * 1000) / 2000003;
