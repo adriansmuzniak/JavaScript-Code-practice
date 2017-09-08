@@ -1564,4 +1564,28 @@ var fly = function(num) {
 fly(4);
 fly(3);
 
-//-------------------------------------
+//-----------------------------------
+
+var midi = true;
+var type = "piano";
+var midiInterface;
+
+function play(sequence) {
+
+}
+
+var pause = function() {
+  stop();
+}
+
+function stop() {
+
+}
+function createMidi() {
+
+}
+if (midi) {
+  midiInterface = function(type) {
+
+  };
+}
