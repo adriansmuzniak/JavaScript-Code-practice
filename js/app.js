@@ -1543,3 +1543,25 @@ function pageLoaderHandler() {
 }
 
 window.onload = pageLoaderHandler;
+
+//------------------------------------
+
+function quacks(num) {
+  for (var i=0; i < num; i++) {
+    console.log("kwak");
+    console.log(num);
+  }
+}
+quacks(6);
+quacks(3);
+
+
+var fly = function(num) {
+  for (var i = 0; i<num; i++) {
+    console.log("latam!");
+  }
+}
+fly(4);
+fly(3);
+
+//-------------------------------------
