@@ -96,19 +96,20 @@ const multiplyYouFool = (x, y, z) => {
 }
 
 const sth = multiplyYouFool(30, 20, 10);
-const sth = multiplyYouFool(30, 20, 100);
+const sths = multiplyYouFool(30, 20, 100);
 console.log(sth);
 
 //-------------------
 
-const color = 'blue'
+// const color = 'blue'
 
 const colorOfSky = () => {
+  let color = "yellow";
   return color; // blue
 };
 
 console.log(colorOfSky()); // blue
-
+console.log(color);
 //-------------------
 
 const satellite = 'The Moon';
@@ -117,7 +118,11 @@ const galaxy = 'The Milky Way';
 let stars = 'North Star';
 
 const myNightSky = () => {
+  stars = "Sirius";
   return 'Night Sky: ' + satellite + ', ' + stars + ', ' + galaxy;
 }
+console.log(stars);
+myNightSky();
+console.log(stars);
 
 //-------------------
