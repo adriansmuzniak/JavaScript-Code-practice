@@ -151,3 +151,16 @@ const starCount = () => {
 
 starCount();
 console.log(i);
+
+//----------------------------
+
+const starCount = (a, b, c) => {
+  let ind = 5;
+  let bind = a;
+  let cind = b;
+  let dind = c;
+
+  console.log(ind * (bind + cind) / dind)
+ }
+
+starCount(30, 34, 23);
