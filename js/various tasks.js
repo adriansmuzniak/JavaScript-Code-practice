@@ -164,3 +164,19 @@ const starCount = (a, b, c) => {
  }
 
 starCount(30, 34, 23);
+
+//------------------------------
+
+let newYearsResolutions = ["Denzel Washington", "Will Smith", "Michael Jordan"];
+
+console.log(newYearsResolutions);
+
+let listItem = newYearsResolutions[0];
+console.log(listItem);
+
+console.log(newYearsResolutions[2]);
+console.log(newYearsResolutions[3]);
+
+console.log(newYearsResolutions);
+
+newYearsResolutions[1] = "Learn a new language";
