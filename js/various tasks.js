@@ -176,7 +176,15 @@ console.log(listItem);
 
 console.log(newYearsResolutions[2]);
 console.log(newYearsResolutions[3]);
-
 console.log(newYearsResolutions);
 
 newYearsResolutions[1] = "Learn a new language";
+console.log(newYearsResolutions.length);
+
+newYearsResolutions.push("Johnny Wayne", "Tom Cruise");
+console.log(newYearsResolutions);
+
+newYearsResolutions.pop();
+console.log(newYearsResolutions);
+
+let groceryList = ['orange juice', 'bananas', 'coffee beans', 'brown rice', 'pasta', 'coconut oil', 'plantains'];
