@@ -1,4 +1,4 @@
-var i = Math.random();
+cvar i = Math.random();
 console.log(i);
 var a = true;
 var b = false;
@@ -168,7 +168,6 @@ starCount(30, 34, 23);
 //------------------------------
 
 let newYearsResolutions = ["Denzel Washington", "Will Smith", "Michael Jordan"];
-
 console.log(newYearsResolutions);
 
 let listItem = newYearsResolutions[0];
@@ -188,3 +187,25 @@ newYearsResolutions.pop();
 console.log(newYearsResolutions);
 
 let groceryList = ['orange juice', 'bananas', 'coffee beans', 'brown rice', 'pasta', 'coconut oil', 'plantains'];
+groceryList.shift();
+groceryList.unshift('popcorn');
+console.log(groceryList);
+console.log(groceryList.slice(1,4));
+
+//----------------------------------------------
+
+// Array methods
+
+/*
+.push(); - add an item to the end of an array;
+.pop();
+.join();
+.slice();
+.splice();
+.shift(); - removes first item of the array;
+.unshift(); - add item at first place of an array;
+.concat(); - add two arrays to each other;
+
+*/
+
+//----------------------------------------------------
