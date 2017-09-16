@@ -1,4 +1,4 @@
-cvar i = Math.random();
+var i = Math.random();
 console.log(i);
 var a = true;
 var b = false;
@@ -101,7 +101,7 @@ console.log(sth);
 
 //-------------------
 
-// const color = 'blue'
+const color = 'blue'
 
 const colorOfSky = () => {
   let color = "yellow";
@@ -154,7 +154,7 @@ console.log(i);
 
 //----------------------------
 
-const starCount = (a, b, c) => {
+const starCounts = (a, b, c) => {
   let ind = 5;
   let bind = a;
   let cind = b;
@@ -163,7 +163,7 @@ const starCount = (a, b, c) => {
   console.log(ind * (bind + cind) / dind)
  }
 
-starCount(30, 34, 23);
+starCounts(30, 34, 23);
 
 //------------------------------
 
@@ -209,3 +209,16 @@ console.log(groceryList.slice(1,4));
 */
 
 //----------------------------------------------------
+
+let condiments = ['Ketchup', 'Mustard', 'Soy Sauce', 'Sriracha'];
+const utensils = ['Fork', 'Knife', 'Chopsticks', 'Spork'];
+
+condiments.push('Mayo');
+console.log(condiments);
+
+condiments = ["Sraciatella"];
+console.log(condiments);
+
+utensils.pop();
+// utensils = ['Spork'];
+console.log(utensils);
