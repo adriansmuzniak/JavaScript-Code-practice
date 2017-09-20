@@ -226,7 +226,14 @@ console.log(utensils);
 //----------------------------------------------------
 
 let cookies = ['chocolate chip', 'raisin', 'macadamia nut', 'sugar'];
+let carss = ["veyron", "ferrari", "passeratti", "bentley", "bmw"]
 
 for (let i = 0; i<cookies.length; i++) {
   console.log('I would love to eat a ' + cookies[i] + ' cookie right now!');
 }
+
+for (let i = 0; i < carss.length; i++) {
+  console.log("I would like to by such beautiful car like: " + carss[i] + " so much...");
+}
+
+//----------------------------------------------------
