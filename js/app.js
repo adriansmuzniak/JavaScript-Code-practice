@@ -1624,8 +1624,8 @@ function printPassengersName(passenger) {
 }
 printPassengersName(passengers);
 
-function sayIt() {
-  var phrase = ("Witam");
+function sayIt(translator) {
+  var phrase = translator("Witam");
   console.log(phrase);
 }
 
@@ -1638,3 +1638,35 @@ function hawaiianTranslator(word) {
   }
 }
 sayIt(hawaiianTranslator);
+
+//--------------------------------
+function procesPassengers(passengers, testFunction, drugaFunkcja) {
+  for (var i = 0; i < passengers.length; i++) {
+    if (testFunction(passengers[i])) {
+      return false;
+    }
+    if (drugaFunkcja(passengers[i])) {
+      return false
+    }
+  }
+  return true;
+}
+
+function printPassengersList(passenger) {
+  var message = passenger.name;
+  
+  if (passenger.paid === true) {
+    message = message + " :zapłacił(a)";
+  } else {
+    message = message + " :nie zapłacił(a)";
+  }
+  console.log(message);
+  return false;
+}
+
+function secondFunction(dane) {
+  var paid = dane.paid;
+  console.log(paid);
+}
+
+procesPassengers(passengers, printPassengersList, secondFunction);
