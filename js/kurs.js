@@ -1,65 +1,164 @@
-// require("../css/main.css")
+/* global document*/
 
-var x = 10;
-console.log(x);
+// Komunikacja z server
+var Comunication = (function() {
 
-function Person1(name)
- {
-   this.name = name;
- }
+    var _getList,
+        _setList;
 
-var jan = new Person1('Jan');
-
-function Person2(name)
- {
-   'use strict';
-   this.name = name;
-   this.getName = function()
-    {
-      try {
-        return this.name;
-      }
-      catch (e) {
-        console.log (e);
-      }
+    return {
+        get: _getList,
+        set: _setList
     };
- }
 
- var jan2 = new Person2('Jan');
- console.log(jan2.getName());
+})();
 
- var jan_name = jan2.getName;
- console.log(jan_name.call(jan2));
+var Tasks = (function() {
 
- var jan_name2 = jan2.getName.bind(jan2);
- console.log(jan_name2());
+    var _init,
 
-//srodowisko leksykalne
+        _id,
+        _todo,
+        _name,
 
+        _addTask,
+        _editTask,
+        _deleteTask,
 
-var getCzas = function() {
-  var d = new Date(); //obecna data
-  //zero wiodące
-  var zero = function(txt) {
-    txt = "" + txt;
-    while (txt.length < 2) {
-      txt = "0" + txt;
-    }
-    return txt;
-  };
+        _taskInput,
+        _addBtn,
+        _incompleteTaskHolder,
+        _completeTaskHolder,
 
-  var t = [];
-  t[0] = zero(d.getHours());
-  t[1] = zero(d.getMinutes());
-  t[2] = zero(d.getSeconds());
-  t[3] = zero(d.getMilliseconds());
-  console.log(t[2]);
-  //podmiana title
-  // document.title = t.join(" : ");
-  // var xd = d.toLocaleString();
-  // console.log(xd);
+        _prefix = 'task',
 
+        _logOn = true,
+        _log = function(txt) {
+            if (_logOn) {
+                console.log(txt);
+            }
+        };
 
-}
+    // dodawanie elementu
+    /*
+        <li id="task1">
+            <input type="checkbox">
+            <label>Task1</label>
+            <input type="text">
+            <button class="edit">Edit</button>
+            <button class="delete">Delete</button>
+        </li>
+    */
+    _addTask = function(txt, status, id) {
 
-setInterval(getCzas, 100);
+        _log('addTask');
+
+        var createNewTaskElement,
+            listItem;
+
+        id = id || _id++;
+        txt = txt || _taskInput.value;
+        status = status || 0;
+
+        createNewTaskElement = function(taskString) {
+            var listItem = document.createElement("li");
+            var checkbox = document.createElement("input");
+            var label = document.createElement("label");
+            var editInput = document.createElement("input");
+            var editButton = document.createElement("button");
+            var deleteButton = document.createElement("button");
+
+            listItem.id = _prefix + id;
+            checkbox.type = "checkbox";
+            editInput.type = "text";
+
+            editButton.innerText = "Edit";
+            editButton.className = "edit";
+            deleteButton.innerText = "Delete";
+            deleteButton.className = "delete";
+
+            label.innerText = taskString;
+
+            listItem.appendChild(checkbox);
+            listItem.appendChild(label);
+            listItem.appendChild(editInput);
+            listItem.appendChild(editButton);
+            listItem.appendChild(deleteButton);
+
+            return listItem;
+        };
+
+        // tworzenie elementu
+        listItem = createNewTaskElement(txt);
+
+        // dodanie elementu w zaleznosci od statusu
+        if (status === 0) {
+            _incompleteTaskHolder.appendChild(listItem);
+        } else {
+            _completeTaskHolder.appendChild(listItem);
+        }
+
+        // dodanie do tabeli _todo
+        _todo[id] = {
+            task:txt,
+            status: status
+        };
+
+        // zapis
+    };
+
+    // inicjalizacja konfiguracji
+    _init = function(cfg) {
+        _log('init');
+
+        var check = function(name, obj) {
+            if (obj === null) {
+                console.warn('ID obiektu ' + name + ' jest niepoprawne!');
+            }
+            return obj;
+        };
+
+        if (!cfg) {
+            console.error('Brak konfiguracji!');
+            console.log('PrzykĹad:');
+            console.log({
+                name: 'Jan',
+                taskInput: 'new-task',
+                addBtn: 'addBtn',
+                incompleteTaskHolder: 'incomplete-tasks',
+                completeTaskHolder: 'completed-tasks'
+            });
+            return false;
+        } else {
+
+            _taskInput = check('taskInput', document.getElementById(cfg.taskInput));
+            _addBtn = check('addBtn', document.getElementById(cfg.addBtn));
+            _incompleteTaskHolder = check('incompleteTaskHolder', document.getElementById(cfg.incompleteTaskHolder));
+            _completeTaskHolder = check('completeTaskHolder', document.getElementById(cfg.completeTaskHolder));
+
+            _name = cfg.name || 'noname';
+        }
+
+        if (_addBtn) {
+            _addBtn.addEventListener("click", function() {
+                _addTask();
+            });
+        }
+
+        // odczyt listy
+        _todo = [];
+    };
+
+    return {
+        init: _init
+    };
+
+})();
+
+Tasks.init({
+    name: 'Kuba',
+    taskInput: 'new-task',
+    addBtn: 'addBtn',
+    incompleteTaskHolder: 'incomplete-tasks',
+    completeTaskHolder: 'completed-tasks'
+});

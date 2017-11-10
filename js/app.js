@@ -26,11 +26,11 @@ console.log(x);
 //---------------------------------------
 
 var matrix = [];
-matrix.push([1,2,3])
-matrix.push([4,5,6])
-matrix.push([7,8,9])
+matrix.push([1,2,3]);
+matrix.push([4,5,6]);
+matrix.push([7,8,9]);
 
-x = matrix[0][2] + matrix[2][1]
+x = matrix[0][2] + matrix[2][1];
 // console.log(matrix);
 
 //-------------------------------------
@@ -40,7 +40,7 @@ while (count > 0) {
   count = count - 1;
 }
 function juggle(){
-  setTimeout(1000)
+  setTimeout(1000);
   // console.log("idzie!");
 }
 //------------------------------------
@@ -93,13 +93,13 @@ if (scoops >= 5) {
 } else if (scoops == 3) {
   alert("Lody się kończą");
 } else if (scoops == 2) {
-  alert("Dwa!")
+  alert("Dwa!");
 } else if (scoops == 1) {
-  alert("Jeden!")
-} else if (scoops == 0) {
+  alert("Jeden!");
+} else if (scoops === 0) {
   // alert("I koniec");
 } else {
-  "Mamy jeszcze dużo lodów, przyjdź i skosztuj"
+  alert("Mamy jeszcze dużo lodów, przyjdź i skosztuj");
 }
 
 //----------------------------------
@@ -123,10 +123,10 @@ while (count > 0) {
   console.log("Jedną weź i podaj w koło,");
   count = count - 1;
   if (count == 4 || count == 3 || count == 2 ) {
-    var word = "butelki"
+    var word = "butelki";
     // console.log(count + " " + word + " piwa na ścianie");
   } else if (count == 1) {
-    var word = "butelka"
+    var word = "butelka";
   } else {
     var word = "butelek";
     console.log("nie ma już " + word + " piwa na ścianie");
@@ -136,16 +136,16 @@ while (count > 0) {
 //------------------------------------------------
 var inStock = true;
 var inSale = true;
-if (inStock == true && (inSale == true || price < 60 )) {
+if (inStock === true && (inSale === true || price < 60 )) {
   //to wygląda na świetny interes - kupuj!
-  document.write("<br>kupuj, kupuj, kupuj!<br>")
+  document.write("<br>kupuj, kupuj, kupuj!<br>");
 }
 
 //------------------------------------------------
 
 var temp = 81;
 var willRain = true;
-var humid = (temp > 80 && willRain == true);
+var humid = (temp > 80 && willRain === true);
 console.log(humid);
 
 var guess = 6;
@@ -155,7 +155,7 @@ console.log(isValid);
 var kB = 1287;
 var tooBig = (kB > 1000);
 var urgent = true;
-var sendFile = (urgent == true || tooBig == false);
+var sendFile = (urgent === true || tooBig === false);
 console.log(sendFile);
 
 var keyPressed = "N";
@@ -614,7 +614,7 @@ for (i = 0; i < hasBubbleGum.length; i++) {
 // Usuwanie z tablicy elementów, prototypowanie, strict mode, pobranie ID i data-setu z DOM, funkcje, operatory logiczne, hoisting...
 
 var scores = [60, 50, 60, 58, 54, 54, 58, 50, 52, 54, 58, 87, 57, 48, 38, 58, 48, 69, 37, 48, 47, 27, 75, 63, 46, 58, 85, 87, 67, 36, 57, 84, 75, 39, 85, 74];
-var costs = [.34, .23, .53, .65, .75, .23, .76, .34, .76, .23, .56, .67, .12, .67, .45, .89, .65, .43, .32, .21, .45, .34, .12, .87, .65, .45, .34, .23, .34, .43, .32, .21, .45, .34, .12, .87];
+var costs = [34, 23, 53, 65, 75, 23, 76, 34, 76, 23, 56, 67, 12, 67, 45, 89, 65, .43, .32, .21, .45, .34, .12, .87, .65, .45, .34, .23, .34, .43, .32, .21, .45, .34, .12, .87];
 var output;
 var highScore = 0;
 // Pętla While
@@ -1539,7 +1539,7 @@ console.log(toy instanceof Duck);
 //------------------------------------
 
 function pageLoaderHandler() {
-  console.log("Ja żyję");
+  // console.log("Ja żyję");
 }
 
 window.onload = pageLoaderHandler;
@@ -1570,22 +1570,71 @@ var midi = true;
 var type = "piano";
 var midiInterface;
 
-function play(sequence) {
-
-}
+function play(sequence) {}
 
 var pause = function() {
   stop();
 }
 
-function stop() {
+function stop() {}
+function createMidi() {}
 
-}
-function createMidi() {
-
-}
 if (midi) {
   midiInterface = function(type) {
-
   };
 }
+
+
+//-------------------------------------------
+
+var passengers = [{name: "Janka Pętlicka", paid: true},
+                  {name: "Dr Zlatan", paid: true}, 
+                  {name: "Stefania Właściwa", paid: false},
+                  {name: "Janek funkcyjniak", paid: true}];
+
+console.log(passengers);
+
+function checkPaid(passenger) {
+  for (var i = 0; i < passenger.length; i++) {
+    if (!passenger[i].paid) {
+      return false;
+    }
+  }
+  return true;
+}
+var sth1 = checkPaid(passengers);
+console.log(sth1);
+
+function checkNoFly(passenger) {
+  for (var i = 0; i < passenger.length; i++) {
+    if (passenger[i].name) {
+      return false;
+    }
+  }
+  return true; 
+}
+
+var sth2 = checkNoFly(passengers);
+console.log(sth2);
+
+function printPassengersName(passenger) {
+  for (var i = 0; i < passenger.length; i++) {
+    console.log(passenger[i].name)
+  }
+}
+printPassengersName(passengers);
+
+function sayIt() {
+  var phrase = ("Witam");
+  console.log(phrase);
+}
+
+function hawaiianTranslator(word) {
+  if (word == "Witam") {
+    return "Aloha"
+  }
+  if (word == "Do widzenia") {
+    return ">Alohaa"
+  }
+}
+sayIt(hawaiianTranslator);
