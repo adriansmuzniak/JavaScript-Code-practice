@@ -1667,6 +1667,7 @@ function printPassengersList(passenger) {
 function secondFunction(dane) {
   var paid = dane.paid;
   console.log(paid);
+  console.log(this);
 }
 
 procesPassengers(passengers, printPassengersList, secondFunction);
