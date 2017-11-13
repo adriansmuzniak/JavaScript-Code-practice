@@ -1,4 +1,5 @@
 // JS examples from book(Rusz głową! Programowanie w javaScript).
+require('../css/main.css');
 
 setTimeout(wakeUpUser, 5000);
 function wakeUpUser(){
@@ -1587,10 +1588,10 @@ if (midi) {
 
 //-------------------------------------------
 
-var passengers = [{name: "Janka Pętlicka", paid: true},
-                  {name: "Dr Zlatan", paid: true}, 
-                  {name: "Stefania Właściwa", paid: false},
-                  {name: "Janek funkcyjniak", paid: true}];
+var passengers = [{name: "Janka Pętlicka", paid: true, ticket: "turystyczna"},
+                  {name: "Dr Zlatan", paid: true, ticket: "pierwsza klasa"}, 
+                  {name: "Stefania Właściwa", paid: false, ticket: "pierwsza klasa"},
+                  {name: "Janek funkcyjniak", paid: true, ticket: "turystyczna"}];
 
 console.log(passengers);
 
@@ -1640,13 +1641,10 @@ function hawaiianTranslator(word) {
 sayIt(hawaiianTranslator);
 
 //--------------------------------
-function procesPassengers(passengers, testFunction, drugaFunkcja) {
+function procesPassengers(passengers, testFunction) {
   for (var i = 0; i < passengers.length; i++) {
     if (testFunction(passengers[i])) {
       return false;
-    }
-    if (drugaFunkcja(passengers[i])) {
-      return false
     }
   }
   return true;
@@ -1664,10 +1662,12 @@ function printPassengersList(passenger) {
   return false;
 }
 
-function secondFunction(dane) {
-  var paid = dane.paid;
-  console.log(paid);
-  console.log(this);
-}
+procesPassengers(passengers, printPassengersList);
 
-procesPassengers(passengers, printPassengersList, secondFunction);
+function createDrinkOrder(passenger) {
+  if (passenger.ticket === "pierwsza klasa") {
+    alert("Podać koktajl czy wino?");
+  } else {
+    alert("Podać colę czy wodę?");
+  }
+}
