@@ -1,5 +1,5 @@
 // JS examples from book(Rusz głową! Programowanie w javaScript).
-require('../css/main.css');
+// require('../css/main.css'); DO WEBSERVERA
 
 setTimeout(wakeUpUser, 5000);
 function wakeUpUser(){
@@ -1238,7 +1238,7 @@ var addi = 3 + "4";
 console.log(addi);
 var plussi = "4" + 3;
 console.log(plussi);
-var multi = 3 ** "4";
+var multi = 3 * "4";
 console.log(multi);
 var divi = 80 / "10";
 console.log(divi);
@@ -1589,7 +1589,7 @@ if (midi) {
 //-------------------------------------------
 
 var passengers = [{name: "Janka Pętlicka", paid: true, ticket: "turystyczna"},
-                  {name: "Dr Zlatan", paid: true, ticket: "pierwsza klasa"}, 
+                  {name: "Dr Zlatan", paid: true, ticket: "premium"}, 
                   {name: "Stefania Właściwa", paid: false, ticket: "pierwsza klasa"},
                   {name: "Janek funkcyjniak", paid: true, ticket: "turystyczna"}];
 
@@ -1664,10 +1664,69 @@ function printPassengersList(passenger) {
 
 procesPassengers(passengers, printPassengersList);
 
+function serveCustomer(passenger) {
+  var getDrinkOrderFunction = createDrinkOrder(passenger);
+  var createFoodOrder = getDinnerOrderFunction(passenger);
+  getDrinkOrderFunction();
+  createFoodOrder();
+  //Zamówienie na posiłek
+  // getDrinkOrderFunction();
+  // getDrinkOrderFunction();
+  //Wyświetlamy film
+  // getDrinkOrderFunction();
+}
+
 function createDrinkOrder(passenger) {
+  var orderFunction;
+
   if (passenger.ticket === "pierwsza klasa") {
-    alert("Podać koktajl czy wino?");
+    orderFunction = function() {
+      alert("Podać koktajl czy wino?")
+    }
+  } else if (passenger.ticket === "turystyczna") {
+    orderFunction = function() {
+      alert("Podać colę czy wodę?")
+    } 
   } else {
-    alert("Podać colę czy wodę?");
+      orderFunction = function() {
+        alert("Podać colę, wodę czy wino?")
+      }
+    }
+  return orderFunction;
+}
+
+function getDinnerOrderFunction(passenger) {
+  var orderFoodFunction;
+
+  if (passenger.ticket === "pierwsza klasa") {
+    orderFoodFunction = function() {
+      alert("Podać kurczaka czy makaron")
+    }    
+  } else if (passenger.ticket === "premium") {
+    orderFoodFunction = function() {
+      alert("Podać przekąski czy talerz serów?")
+    }
+  } else {
+    orderFoodFunction = function() {
+      alert("Podać orzeszki czy precelki?")
+    }
+  }
+  return orderFoodFunction;
+}
+
+function servePassengers(passengers) {
+  for (var i = 0; i < passengers.length; i++) {
+    serveCustomer(passengers[i]);
   }
 }
+servePassengers(passengers); 
+
+var products = [  {name: "Grejpfrut", calories: 170, color: "czerwony", sold: },
+                  {name: "Pomarańcza", calories: 160, color: "pomarańczowy", sold: },
+                  {name: "Cola", calories: 210, color: "karmelowy", sold: },
+                  {name: "Cola dietetyczna", calories: 0, color: "karmelowy", sold: },
+                  {name: "Cytryna", calories: 200, color: "bezbarwny", sold: },
+                  {name: "Malina", calories: 180, color: "różowy", sold: },
+                  {name: "Piwo korzenne", calories: 200, color: "karmelowy", sold: },
+                  {name: "Woda", calories: 0, color: "bezbarwny", sold: }
+                ];
