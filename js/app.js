@@ -1719,14 +1719,30 @@ function servePassengers(passengers) {
     serveCustomer(passengers[i]);
   }
 }
-servePassengers(passengers); 
+// servePassengers(passengers); 
 
-var products = [  {name: "Grejpfrut", calories: 170, color: "czerwony", sold: },
-                  {name: "Pomarańcza", calories: 160, color: "pomarańczowy", sold: },
-                  {name: "Cola", calories: 210, color: "karmelowy", sold: },
-                  {name: "Cola dietetyczna", calories: 0, color: "karmelowy", sold: },
-                  {name: "Cytryna", calories: 200, color: "bezbarwny", sold: },
-                  {name: "Malina", calories: 180, color: "różowy", sold: },
-                  {name: "Piwo korzenne", calories: 200, color: "karmelowy", sold: },
-                  {name: "Woda", calories: 0, color: "bezbarwny", sold: }
+var products = [  {name: "Grejpfrut", calories: 170, color: "czerwony", sold: 8200},
+                  {name: "Pomarańcza", calories: 160, color: "pomarańczowy", sold: 12101},
+                  {name: "Cola", calories: 210, color: "karmelowy", sold: 25412},
+                  {name: "Cola dietetyczna", calories: 0, color: "karmelowy", sold: 43922},
+                  {name: "Cytryna", calories: 200, color: "bezbarwny", sold: 14983},
+                  {name: "Malina", calories: 180, color: "różowy", sold: 9427},
+                  {name: "Piwo korzenne", calories: 200, color: "karmelowy", sold: 9909},
+                  {name: "Woda", calories: 0, color: "bezbarwny", sold: 62123}
                 ];
+
+
+var numbersArray = [23,43,54,65,43,32,87,65,76,43,64,76,34,65,23];
+ 
+function sortujemy(num1, num2) {
+   if (num1 < num2) {
+     return 1;
+   } else if (num1 == num2) {
+     return 0;
+   } else {
+     return -1;
+   }
+ }
+
+var costam = numbersArray.sort(sortujemy);
+console.log(costam);
