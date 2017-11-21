@@ -1730,19 +1730,49 @@ var products = [  {name: "Grejpfrut", calories: 170, color: "czerwony", sold: 82
                   {name: "Piwo korzenne", calories: 200, color: "karmelowy", sold: 9909},
                   {name: "Woda", calories: 0, color: "bezbarwny", sold: 62123}
                 ];
-
-
-var numbersArray = [23,43,54,65,43,32,87,65,76,43,64,76,34,65,23];
  
-function sortujemy(num1, num2) {
-   if (num1 < num2) {
+function compareSold( colaA, colaB ) {
+   if (colaA.sold > colaB.sold) {
      return 1;
-   } else if (num1 == num2) {
+   } else if ( colaA.sold === colaB.sold ) {
      return 0;
    } else {
      return -1;
    }
  }
 
-var costam = numbersArray.sort(sortujemy);
-console.log(costam);
+console.log(products.sort(compareSold));
+
+function compareProducts(products) {
+  for (var i = 0; i < products.length; i++) {
+    console.log("Nazwa: " + products[i].name + 
+   ", liczba kalorii: " + products[i].calories + ", kolor: " + products[i].color + ", liczba sprzedanych butelek: " + 
+   products[i].sold);
+  }
+}
+
+compareProducts(products);
+
+function compareNames( name1, name2 ) {
+  if (name1.name > name2.name) {
+    return 1;
+  } else if (name1.name === name2.name) {
+    return 0;
+  } else {
+    return -1;
+  }
+}
+
+console.log(products.sort(compareNames));
+
+function compareCalories( cal1, cal2 ) {
+  if ( cal1.calories > cal2.calories ) {
+    return 1;
+  } else if ( cal1.calories === cal2.calories ) {
+    return 0;
+  } else {
+    return -1;
+  }
+}
+
+// console.log(products.sort(compareCalories));
