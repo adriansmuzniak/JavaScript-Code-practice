@@ -1776,3 +1776,13 @@ function compareCalories( cal1, cal2 ) {
 }
 
 // console.log(products.sort(compareCalories));
+
+function addN(n) {
+  var adder = function(x) {
+    return n + x;
+  }
+  return adder;
+}
+
+var add2 = addN(100);
+console.log(add2);
