@@ -1720,6 +1720,7 @@ function servePassengers(passengers) {
   }
 }
 // servePassengers(passengers); 
+//---------------------------------------
 
 var products = [  {name: "Grejpfrut", calories: 170, color: "czerwony", sold: 8200},
                   {name: "Pomarańcza", calories: 160, color: "pomarańczowy", sold: 12101},
@@ -1777,6 +1778,7 @@ function compareCalories( cal1, cal2 ) {
 
 // console.log(products.sort(compareCalories));
 
+// --------------------------------------------------
 function addN(n) {
   var adder = function(x) {
     return n + x;
@@ -1786,3 +1788,83 @@ function addN(n) {
 
 var add2 = addN(100);
 console.log(add2);
+
+// -------------------------------------
+
+// function vaccine(dosage) {
+//   if (dossage > 0) {
+//     inject(dossage);
+//   }
+// }
+
+// administer(patient, vaccine, time);
+
+// administr(patient, function(dossage){
+//   if (dossage > 0) {
+//     inject(dossage);
+//   }
+// }, time);
+
+var count = 0;
+
+function counting() {
+  count = count + 1;
+  return count;
+}
+
+console.log(counting());
+console.log(counting());
+console.log(counting());
+
+//-----------------------
+
+//Domknięcie leksykalne...
+
+function makeCounter() {
+  var count = 0;
+
+  function counter() {
+    count = count + 1;
+    return count;
+  }
+  return counter;
+}
+
+var counterTest = makeCounter();
+console.log(counterTest());
+console.log(counterTest());
+console.log(counterTest());
+
+function makeCounter2() {
+  var count = 100;
+
+    return {
+      increment: function() {
+        count++;
+        return count;
+      },
+      increment2: function() {
+        count = count + 2;
+        return count;
+      }
+    }; 
+  }
+
+ var someCounter = makeCounter2();
+console.log(someCounter.increment());
+console.log(someCounter.increment2());
+console.log(someCounter.increment2());
+
+//-----------------------
+
+function multiN(n) {
+  return function multiBy(m) {
+    return n * m;
+  }
+}
+
+var multBy3 = multiN(3);
+console.log(multBy3(3));
+
+//-----------------------
+

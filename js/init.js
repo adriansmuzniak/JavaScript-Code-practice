@@ -6,7 +6,7 @@ window.onload = function() {
         }, 1000)
         cookies.bake( 2000 );
     }
-}
+};
 
 var cookies = {
     instructions: "Wstepne rozgrzewanie do 175 stopni...",
@@ -23,4 +23,4 @@ function done() {
         alert("Ciasteczka są już zimne, można je jeść");
         console.log("Zakończone");
     }, 1000);
-}
+};
