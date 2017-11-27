@@ -1868,3 +1868,31 @@ console.log(multBy3(3));
 
 //-----------------------
 
+function makeTimer(doneMessage, n) {
+
+  setTimeout(function() {
+    alert(doneMessage)
+  }, n);
+
+} 
+
+// makeTimer("Wszystko działa!", 2000);
+
+function makeSomeTimer(doneM, n) {
+  setTimeout(handler, n)
+  function handler() {
+    alert(doneM);
+  }
+}
+
+// makeSomeTimer("Gtowe!", 2000);
+
+function setTimer(doneMessage, n) {
+  
+  setTimeout(function() {
+    alert(doneMessage)
+  }, n);
+  
+  doneMessage = "BUUM"
+}
+setTimer("Boli?", 2000);
