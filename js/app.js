@@ -1895,4 +1895,49 @@ function setTimer(doneMessage, n) {
   
   doneMessage = "BUUM"
 }
-setTimer("Boli?", 2000);
+// setTimer("Boli?", 2000);
+
+//--------------------------------------
+//Zmiana liczby kliknięć w DIVie bez domknięcia
+
+var count = 0; /*count jako zmienna globalna! */
+ 
+window.onload = function() {
+  var button = document.getElementById("clickme");
+  button.onclick = handleclick();
+};
+
+function handleclick() {
+  var message = "Kliknąłeś mnie";
+  var div = document.getElementById("message");
+  count++;
+  div.innerHTML = message + count + " razy";
+}
+//----------------------------------------
+
+//----------------------------------------
+//Zmiana liczby kliknięć w DIVie z domknięciem;
+
+window.onload = function () {
+  var count = 0;
+  var message = "Kliknąłeś mnie";
+  var div = document.getElementById('message');
+
+  var button = document.getElementById('clickme');
+  button.onclick = function () {
+    count++;
+
+    if (count === 1) {
+      div.innerHTML = message + " " + count + " raz";
+    } else {
+      div.innerHTML = message + " " + count + " razy";
+    }
+  }
+}
+//--------------------------------------------
+
+
+
+
+
+
