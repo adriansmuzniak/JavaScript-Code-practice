@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+<head>
+    <meta charset="UTF-8">
+    <title>Arrays</title>
+    <meta name="author" content="Adrian Smużniak">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <style>
+    #fruit {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 300px;
+        height: 300px;
+        /* border: 2px solid red; */
+        border-radius: 25px;
+        /* background-color: rgb(163, 17, 17); */
+        box-shadow: 5px 5px 15px 0px rgb(104, 4, 4);
+        background: linear-gradient(to bottom, #832804 0%,#c93d06 50%,#912402 51%,#bd3905 100%); /* W3C, IE10+, FF16+, Chrome26+,
+        Opera12+, Safari7+ */  
+        
+    }
+    span {
+        position: relative;
+        display: block;
+        width: 150px;
+        /* height: 100px; */
+        top: 50%;
+        text-align: center;
+        border: 1px solid green;
+        transform: translate(50%, -50%);
+    }
+    
+    </style>
+    <script>
+    window.onload = function() {
+        setInterval(spinner, 3000);
+    }
+    
+    var fruits = ['Apple', 'Apricot', 'Avocado', 'Banana', 'Bilberry', 'Blackberry', 'Blackcurrant', 'Blueberry', 'Boysenberry', 'Crab',                       'Currant', 'Cherry', 'Cherimoya', 'Chico', 'Cloudberry', 'Coconut', 'Cranberry', 'Cucumber', 'Custard'];
+    
+    function spinner() {
+        var random = Math.floor(Math.random() * 19);
+        var div = document.getElementById("inside");
+        // console.log(fruits[random]);
+        div.innerHTML = fruits[random];
+    }
+    </script>
+</head>
+<body>
+    <div id="fruit"><span id="inside"></span></div>
+</body>
+</html>

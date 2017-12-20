@@ -1897,47 +1897,233 @@ function setTimer(doneMessage, n) {
 }
 // setTimer("Boli?", 2000);
 
+function someFunction() {
+  var body = document.getElementsByTagName("body");
+  body[0].style.backgroundColor = "black";
+};
 //--------------------------------------
 //Zmiana liczby kliknięć w DIVie bez domknięcia
 
-var count = 0; /*count jako zmienna globalna! */
+// var count = 0; /*count jako zmienna globalna! */
  
-window.onload = function() {
-  var button = document.getElementById("clickme");
-  button.onclick = handleclick();
-};
+// window.onload = function() {
+//   var button = document.getElementById("clickme");
+//   button.onclick = handleclick();
+// };
 
-function handleclick() {
-  var message = "Kliknąłeś mnie";
-  var div = document.getElementById("message");
-  count++;
-  div.innerHTML = message + count + " razy";
-}
+// function handleclick() {
+//   var message = "Kliknąłeś mnie";
+//   var div = document.getElementById("message");
+//   count++;
+//   div.innerHTML = message + count + " razy";
+// }
 //----------------------------------------
 
 //----------------------------------------
 //Zmiana liczby kliknięć w DIVie z domknięciem;
 
-window.onload = function () {
-  var count = 0;
-  var message = "Kliknąłeś mnie";
-  var div = document.getElementById('message');
+// window.onload = function () {
+//   var count = 0;
+//   var message = "Kliknąłeś mnie";
+//   var div = document.getElementById('message');
 
-  var button = document.getElementById('clickme');
-  button.onclick = function () {
-    count++;
+//   var button = document.getElementById('clickme');
+//   button.onclick = function () {
+//     count++;
 
-    if (count === 1) {
-      div.innerHTML = message + " " + count + " raz";
+//     if (count === 1) {
+//       div.innerHTML = message + " " + count + " raz";
+//     } else {
+//       div.innerHTML = message + " " + count + " razy";
+//     }
+//   }
+// }
+//--------------------------------------------
+
+//Konstruktor
+
+function Dog (name, breed, weight) {
+  this.name = name;
+  this.breed = breed;
+  this.weight = weight;
+  this.bark = function() {
+    if (this.weight > 15) {
+      // alert(this.name + " szczeka hau hau")
     } else {
-      div.innerHTML = message + " " + count + " razy";
+      // alert(this.name + " szczeka hiauuuuuu");
     }
   }
 }
-//--------------------------------------------
 
+var fido = new Dog("Maksio", "Owczarek", 5);
+var fluffy = new Dog("Dino", "Pudel", 16);
+var spot = new Dog("Kieł", "chiuaua", 4);
+var dogs = [fido, fluffy, spot];
 
+for (var i = 0; i < dogs.length; i++) {
+  var size = "mały";
+  if (dogs[i].weight > 10) {
+    size = "duży"
+  } 
+  // console.log("Pies: " + dogs[i].name + " to " + size + " pies rasy " + dogs[i].breed)
+}
 
+for (var i = 0; i < dogs.length; i++) {
+  dogs[i].bark();
+}
 
+function widget(partNo, size) {
+  this.no = partNo;
+  this.breed = size;
+};
 
+function formFactor(material, widget) {
+  this.material = material;
+  this.widget = widget;
+};
 
+function superFactor(object, widget, formFactor) {
+  this.object = object;
+  this.widget = widget;
+  this.formFactor = formFactor;
+}
+
+var widgetA = new widget(100, "duży");
+var widgetB = new widget(101, "mały");
+var formFactorA = new formFactor("plastikowy", widgetA);
+var formFactorB = new formFactor("metalowy", widgetB);
+var superFactorA = new superFactor("Wspaniały", widgetA, formFactorA);
+var superFactorB = new superFactor("Niesamowity", widgetB, formFactorB);
+
+console.log(formFactorA);
+console.log(formFactorB);
+console.log(superFactorA);
+console.log(superFactorB);
+
+function Coffee(roast, ounces) {
+  this.roast = roast;
+  this.ounces = ounces;
+  this.getSize = function() {
+    
+    if (this.ounces === 250) {
+      return "mała";
+    } else if (this.ounces === 375) {
+      return "średnia";
+    } else if (this.ounces === 500) {
+      return "duża";      
+    }
+  };
+  this.toString = function() {
+    return "Twoje zamówienie: " + this.getSize() + " " + this.roast + ".";
+  };
+}
+
+var coffee = new Coffee("Segafredo", 375);
+console.log(coffee.toString());
+
+var darkRoast = new Coffee("Parana Cafe", 500);
+console.log(darkRoast.toString());
+
+//250 ml to mała kawa;
+//375 ml to średnia kawa;
+//500ml to duża kawa;
+
+//toString - Twoje zamówienie to: duża kawa Segafreo
+
+// -------------------------------------------------
+var cadiParams = {
+  make: "GM",
+  model: "cadillac",
+  year: 1955,
+  color: "jasnobrązowy",
+  passengers: 5,
+  convertible: false,
+  milleage: 12892
+};
+
+var ferrariParams = {
+  make: "Włoski",
+  model: "Enzo",
+  year: 2013,
+  color: "czerwony",
+  passengers: 2,
+  convertible: false,
+  milleage: 10000
+};
+
+var chevyParams = {
+  make: "Chevy",
+  model: "Bel Air",
+  year: 1957,
+  color: "czerwony",
+  passengers: 2,
+  convertible: false,
+  milleage: 1021
+};
+
+var taxiParams = {
+  make: "SieMoCOrp",
+  model: "Taxi",
+  year: 1955,
+  color: "żółty",
+  passengers: 4,
+  convertible: false,
+  milleage: 281341
+};
+
+var fiatParams = {
+  make: "Fiat",
+  model: "500",
+  year: 1957,
+  color: "szaroniebieski",
+  passengers: 2,
+  convertible: false,
+  milleage: 88000
+}
+  
+var cadi = new Car(cadiParams);
+var ferrari = new Car(ferrariParams);
+var chevy = new Car(chevyParams);
+var taxi = new Car(taxiParams);
+var fiat = new Car(fiatParams);
+
+function Car (params) {
+  this.make = params.make;
+  this.model = params.model;
+  this.year = params.year;
+  this.color = params.color;
+  this.passengers = params.passengers; 
+  this.convertible = params.convertible;
+  this.milleage = params.milleage;
+  this.started = false;
+  this.start = function() {
+    this.started = true;
+  };
+  this.stop = function() {
+    this.started = false;
+  };
+  this.drive = function() {
+    if (this.started) {
+      console.log(this.make + " " + this.model + " robi bruum");
+      this.started = false;
+    } else {
+      console.log(this.make + " " + this.model + " nie jedzie");
+      this.started = true;
+    }
+  }
+}
+
+// var ferrari = new Car("Włoski", "Enzo", 2013, "red", 2, false, 20000);
+// var chevy = new Car("Chevy", "Bel air", 1957, "czerwony", 2, false, 1021);
+// var cadi = new Car("Gm", "Cadillac", 1955, "jasnobrązowy", 5, false, 12892);
+// var taxi = new Car("SieMoCorp", "Taxi", 1955, "żółty", 4, false, 281341) ;
+// var fiat = new Car("Fiat", "500", 1957, "szaroniebieski", 2, false, 88000);
+
+var cars = [ferrari, chevy, cadi, taxi, fiat];
+
+for (var i = 0; i < cars.length; i++) {
+  cars[i].start();
+  cars[i].drive();
+  cars[i].drive();
+  cars[i].stop();
+}
