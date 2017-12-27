@@ -2127,3 +2127,18 @@ for (var i = 0; i < cars.length; i++) {
   cars[i].drive();
   cars[i].stop();
 }
+
+var limoParams = { 
+  make: "SieMoCorp",
+  model: "limosine",
+  year: 1983,
+  color: "czarny",
+  passengers: 12,
+  convertible: true,
+  mileage: 21120
+};
+
+var limoo = new Car(limoParams);
+var limoDog = new Dog("Błękitna rapsodia", "Pudel", 40);
+
+console.log(limoo.make + " " + limoo.model + " jest typu " + typeof limoo);
