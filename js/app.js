@@ -1942,6 +1942,24 @@ function someFunction() {
 
 //Konstruktor
 
+function dogCatcher(obj) {
+  return (obj instanceof Dog)
+}
+
+function Cat(name, breed, weight) {
+  this.name = name;
+  this.breed = breed;
+  this.weight = weight;
+}
+var meow = new Cat("Filemon", "Syjamski", 5);
+var whiskers = new Cat("Rojber", "dachowiec", 6);
+
+var fido = {
+  name: "Burek",
+  breed: "mieszaniec",
+  weight: 20
+}
+
 function Dog (name, breed, weight) {
   this.name = name;
   this.breed = breed;
@@ -1955,22 +1973,28 @@ function Dog (name, breed, weight) {
   }
 }
 
-var fido = new Dog("Maksio", "Owczarek", 5);
+// var fido = new Dog("Maksio", "Owczarek", 5);
 var fluffy = new Dog("Dino", "Pudel", 16);
 var spot = new Dog("Kieł", "chiuaua", 4);
-var dogs = [fido, fluffy, spot];
+var dogs = [meow, fido, fluffy, spot, whiskers];
 
 for (var i = 0; i < dogs.length; i++) {
-  var size = "mały";
-  if (dogs[i].weight > 10) {
-    size = "duży"
-  } 
-  // console.log("Pies: " + dogs[i].name + " to " + size + " pies rasy " + dogs[i].breed)
+  if (dogCatcher(dogs[i])) {
+    console.log(dogs[i].name + " to pies!");
+  }
 }
 
-for (var i = 0; i < dogs.length; i++) {
-  dogs[i].bark();
-}
+// for (var i = 0; i < dogs.length; i++) {
+//   var size = "mały";
+//   if (dogs[i].weight > 10) {
+//     size = "duży"
+//   } 
+//   // console.log("Pies: " + dogs[i].name + " to " + size + " pies rasy " + dogs[i].breed)
+// }
+
+// for (var i = 0; i < dogs.length; i++) {
+//   dogs[i].bark();
+// }
 
 function widget(partNo, size) {
   this.no = partNo;
@@ -2142,3 +2166,13 @@ var limoo = new Car(limoParams);
 var limoDog = new Dog("Błękitna rapsodia", "Pudel", 40);
 
 console.log(limoo.make + " " + limoo.model + " jest typu " + typeof limoo);
+console.log(limoDog.name + " jest typu " + typeof limoDog);
+
+if (typeof limoDog === "object") {
+  console.log("To jest obiekt")
+}
+
+if (limoDog instanceof Dog) {
+  console.log("to jest instancja Dog")
+}
+
