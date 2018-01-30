@@ -2176,3 +2176,28 @@ if (limoDog instanceof Dog) {
   console.log("to jest instancja Dog")
 }
 
+//---------Konstruktor DATY-------------------------
+
+var someDate = new Date();
+var someDate2 = new Date("July 26, 1986");
+var someDateToString = someDate.toDateString();
+var someDateTimeString = someDate.toLocaleTimeString();
+var someDateDateString = someDate.toLocaleDateString();
+var someDateYear = someDate.getFullYear();
+var someDateTime = someDate.getTime();
+var someDateDay = someDate.getDay();
+
+console.log(someDate);
+console.log(someDate2);
+console.log(someDateToString);
+console.log(someDateTimeString);
+console.log(someDateDateString);
+console.log(someDateYear);
+console.log(someDateTime);
+console.log(someDateDay)
+
+
+
+
+
+
