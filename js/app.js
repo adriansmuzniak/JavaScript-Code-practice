@@ -1,8 +1,9 @@
 // JS examples from book(Rusz głową! Programowanie w javaScript).
-// require('../css/main.css'); DO WEBSERVERA
+require('../css/main.css'); //DO WEBSERVERA
 
 setTimeout(wakeUpUser, 5000);
-function wakeUpUser(){
+
+function wakeUpUser() {
   // console.log("robimy stronkę?");
 }
 
@@ -10,7 +11,7 @@ function wakeUpUser(){
 
 var price = 28.99;
 var discount = 10;
-var total = price - (price * (discount/100));
+var total = price - (price * (discount / 100));
 if (total > 35) {
   console.log("o Panie");
 } else {
@@ -20,16 +21,16 @@ if (total > 35) {
 // -------------------------------------
 
 var i;
-for(i = 0; i < 10; i++){ }
+for (i = 0; i < 10; i++) {}
 var x = i;
 console.log(x);
 
 //---------------------------------------
 
 var matrix = [];
-matrix.push([1,2,3]);
-matrix.push([4,5,6]);
-matrix.push([7,8,9]);
+matrix.push([1, 2, 3]);
+matrix.push([4, 5, 6]);
+matrix.push([7, 8, 9]);
 
 x = matrix[0][2] + matrix[2][1];
 // console.log(matrix);
@@ -37,15 +38,19 @@ x = matrix[0][2] + matrix[2][1];
 //-------------------------------------
 var count = 10;
 while (count > 0) {
-  setTimeout(juggle,2000);
+  setTimeout(juggle, 2000);
   count = count - 1;
 }
-function juggle(){
+
+function juggle() {
   setTimeout(1000);
   // console.log("idzie!");
 }
 //------------------------------------
-var dog = {name:"Burek", weight: 35};
+var dog = {
+  name: "Burek",
+  weight: 35
+};
 if (dog.weight > 30) {
   console.log("HAU HAU");
 } else {
@@ -62,7 +67,7 @@ console.log(circleArea);
 
 var age = 10;
 var name = "Olek";
-if (age > 14){
+if (age > 14) {
   console.log("Przykro mi, ta strona jest tylko dla dzieci");
 } else {
   console.log("witaj " + name);
@@ -70,7 +75,7 @@ if (age > 14){
 //------------------------------------
 
 var temp = 10;
-var resultsum = (9/5) * temp + 32;
+var resultsum = (9 / 5) * temp + 32;
 console.log(resultsum);
 
 //-----------------------------------
@@ -81,9 +86,9 @@ console.log(sumStringNumber);
 //----------------------------------
 
 var scoops = 5;
-while (scoops > 0){
+while (scoops > 0) {
   document.write("kolejna gałka!<br>");
-  scoops = scoops-1;
+  scoops = scoops - 1;
 }
 document.write("życie bez lodów nie jest już takie same<br>");
 
@@ -123,7 +128,7 @@ while (count > 0) {
   console.log(count + " " + word + " piwa,");
   console.log("Jedną weź i podaj w koło,");
   count = count - 1;
-  if (count == 4 || count == 3 || count == 2 ) {
+  if (count == 4 || count == 3 || count == 2) {
     var word = "butelki";
     // console.log(count + " " + word + " piwa na ścianie");
   } else if (count == 1) {
@@ -137,7 +142,7 @@ while (count > 0) {
 //------------------------------------------------
 var inStock = true;
 var inSale = true;
-if (inStock === true && (inSale === true || price < 60 )) {
+if (inStock === true && (inSale === true || price < 60)) {
   //to wygląda na świetny interes - kupuj!
   document.write("<br>kupuj, kupuj, kupuj!<br>");
 }
@@ -223,7 +228,7 @@ bark("Agent", 21) //"Agent szczeka HAU HAU"
 
 //---------------------------------------------
 
-function whatShallIwear(temp){
+function whatShallIwear(temp) {
   if (temp < 15) {
     console.log("ubierz kurtkę");
   } else if (temp < 25) {
@@ -240,7 +245,8 @@ whatShallIwear(30);
 //---------------------------------------
 
 saveMyProfile("Tomek", 1991, 3.81, false);
-function saveMyProfile(name, birthday, GPA, newuser){
+
+function saveMyProfile(name, birthday, GPA, newuser) {
   if (birthday > 2004) {
     //kod obsługi dziecka
   }
@@ -250,16 +256,16 @@ function saveMyProfile(name, birthday, GPA, newuser){
 
 var student = "Krzysiu";
 var year = 1998;
-var GPA = 381/100;
+var GPA = 381 / 100;
 var status = "oczekujący";
 var isNewUser = (status == "nowy_użytkownik");
 saveMyProfile(student, year, GPA, isNewUser);
-saveMyProfile(student, year, 381/100, status == "nowy_użytkownik"); //również dopuszczalne
+saveMyProfile(student, year, 381 / 100, status == "nowy_użytkownik"); //również dopuszczalne
 
 //-----------------------------------------
 // PARAMETR A ARGUMENT
 
-function cook(degrees, mode, duration){
+function cook(degrees, mode, duration) {
   //ciało funkcji
 }
 // degrees, mode, duration - to są parametry funkcji
@@ -270,7 +276,7 @@ cook(180.0, "pieczenie", 30);
 // Parametry funkcji definiujemy raz, ale do funkcji możemy przekazać różne argumenty!
 
 function doIt(param, name) {
-  var jakistest2 = param/2;
+  var jakistest2 = param / 2;
   console.log(jakistest2 + " " + name);
 }
 var jakisTest = 10;
@@ -281,7 +287,7 @@ doIt(jakisTest, durneImię);
 
 function dogYears(dogName, age) {
   var years = age * 7;
-  console.log(dogName + " ma " + years + " lata." );
+  console.log(dogName + " ma " + years + " lata.");
 }
 var dog = "Adolf";
 var dogYear = 11;
@@ -358,7 +364,7 @@ var pointsPerLevel = 1000;
 var userPoints = 2008;
 
 function getAvatar(points) {
-  var level = points/pointsPerLevel;
+  var level = points / pointsPerLevel;
 
   if (level == 0) {
     return "Niedźwiadek Yogi";
@@ -422,8 +428,8 @@ var width = 600;
 var height = 400;
 
 function setup(width, height) {
-  centerX = width/2;
-  centerY = height/2;
+  centerX = width / 2;
+  centerY = height / 2;
 }
 
 function computeDistance(x1, y1, x2, y2) {
@@ -536,20 +542,20 @@ makePhrases();
 
 //--------------------------------------
 
-console.log( 1 || ["element1", "element2"]);
-console.log( 0 || ["element1", "element2"]);
-console.log( 1 && ["element1", "element2"]);
-console.log( 0 && ["element1", "element2"]);
-console.log( 1 || ["element1", "element2"]);
-console.log( 0 || ["element1", "element2"]);
-console.log( 1 || false);
-console.log( 0 || false);
-console.log( 1 || true);
-console.log( 0 || true);
-console.log( 1 && true);
-console.log( 0 && true);
-console.log( 1 && false);
-console.log( undefined && 1);
+console.log(1 || ["element1", "element2"]);
+console.log(0 || ["element1", "element2"]);
+console.log(1 && ["element1", "element2"]);
+console.log(0 && ["element1", "element2"]);
+console.log(1 || ["element1", "element2"]);
+console.log(0 || ["element1", "element2"]);
+console.log(1 || false);
+console.log(0 || false);
+console.log(1 || true);
+console.log(0 || true);
+console.log(1 && true);
+console.log(0 && true);
+console.log(1 && false);
+console.log(undefined && 1);
 //-----------------------------------------
 
 // //Gra w okręty - początek
@@ -652,7 +658,7 @@ var highScore = 0;
 function printHighScores(scores) {
   var highScore = 0;
   var output;
-  for (var i=0; i < scores.length; i++) {
+  for (var i = 0; i < scores.length; i++) {
     output = "Płyn do baniek nr " + i + " wynik: " + scores[i];
     console.log(output);
     if (scores[i] > highScore) {
@@ -664,7 +670,7 @@ function printHighScores(scores) {
 
 function getBestResults(scores, highscore) {
   var bestSolutions = [];
-  for (var i=0; i<scores.length; i++) {
+  for (var i = 0; i < scores.length; i++) {
     if (scores[i] == highScore) {
       bestSolutions.push(i);
     }
@@ -681,7 +687,7 @@ console.log("Płyny z najlepszym wynikiem: " + bestSolutions);
 function getMoreEffectiveSolution(scores, costs, highscore) {
   var cost = 100;
   var index;
-  for (var i=0; i<scores.length; i++) {
+  for (var i = 0; i < scores.length; i++) {
     if (scores[i] == highscore) {
       if (cost > costs[i]) {
         index = i;
@@ -707,13 +713,13 @@ var chevy = {
   convertible: false,
   mileage: 1021,
   started: false,
-  start: function() {
+  start: function () {
     this.started = true;
   },
-  stop: function() {
+  stop: function () {
     this.started = false;
   },
-  drive: function() {
+  drive: function () {
     if (this.started) {
       console.log(this.make + " " + this.model + " robi: brrrrum wrrrr!");
     } else {
@@ -739,13 +745,13 @@ var cadi = {
   convertible: false,
   "comfortable Seats": true,
   started: false,
-  start: function() {
+  start: function () {
     this.started = true;
   },
-  stop: function() {
+  stop: function () {
     this.started = false;
   },
-  drive: function() {
+  drive: function () {
     if (this.started) {
       console.log(this.make + " " + this.model + " wystartował więc jedziemyyyyyy");
     } else {
@@ -818,13 +824,13 @@ var taxi = {
   convertible: false,
   mileage: 281341,
   started: false,
-  start: function() {
+  start: function () {
     this.started = true;
   },
-  stop: function() {
+  stop: function () {
     this.started = false;
   },
-  drive: function() {
+  drive: function () {
     if (this.started) {
       console.log(this.make + " " + this.model + " wystartował!");
     } else {
@@ -952,8 +958,8 @@ function makeCar() {
 }
 
 function displayCar(car) {
-  console.log("Twoim nowym samochodem jest: " + car.make + " " + car.model + " z roku " + car.year + " a jego kolor to " + car.colors
-  + "." + " Liczba pasażerów jaka wejdzie: " + car.passengers);
+  console.log("Twoim nowym samochodem jest: " + car.make + " " + car.model + " z roku " + car.year + " a jego kolor to " + car.colors +
+    "." + " Liczba pasażerów jaka wejdzie: " + car.passengers);
 }
 
 var carToSell = makeCar();
@@ -992,17 +998,17 @@ var fiat = {
   mileage: 0,
   started: false,
   fuel: 0,
-  start: function() {
+  start: function () {
     if (this.fuel == 0) {
       console.log("Ej, musisz zatankować!")
-    }  else {
+    } else {
       this.started = true;
     }
   },
-  stop: function() {
+  stop: function () {
     this.started = false;
   },
-  drive: function() {
+  drive: function () {
     if (this.started) {
       if (this.fuel > 0) {
         console.log(this.make + " " + this.model + " " + " został odpalony");
@@ -1011,12 +1017,12 @@ var fiat = {
       } else {
         console.log("Kur..., brak paliwa");
         this.stop();
-        }
+      }
     } else {
       console.log("Najpierw musisz zatankować")
     }
   },
-  addFuel: function(amount) {
+  addFuel: function (amount) {
     this.fuel = this.fuel + amount;
   }
 };
@@ -1038,16 +1044,16 @@ var song = {
   seconds: 3,
   genre: "80",
   playing: false,
-  play: function() {
+  play: function () {
     if (!this.playing) {
       this.playing = true,
-      console.log("Odtwarzam teraz " + this.name + " wykonywany przez: " + this.artists + ".");
+        console.log("Odtwarzam teraz " + this.name + " wykonywany przez: " + this.artists + ".");
     }
   },
-  pause: function() {
+  pause: function () {
     if (this.playing) {
       this.playing = false,
-      console.log("Odwtwarzanie utworu " + this.name + " wykonywanego przez: " + this.artists + " zostało wstrzymane.");
+        console.log("Odwtwarzanie utworu " + this.name + " wykonywanego przez: " + this.artists + " zostało wstrzymane.");
     }
   }
 }
@@ -1060,13 +1066,13 @@ song.pause();
 var eightBall = {
   index: 0,
   advice: ["tak", "nie", "nie wiem", "może"],
-  shake: function() {
+  shake: function () {
     this.index = Math.floor(Math.random() * this.advice.length);
     if (this.index >= this.advice.length) {
       this.index = 0;
     }
   },
-  look: function() {
+  look: function () {
     return this.advice[this.index];
   }
 }
@@ -1102,11 +1108,11 @@ function init() {
   song1.innerHTML = "Smutne zamszowe łańcuchy, Elvisa Pagelya";
   song2.innerHTML = "Wielkie obiekty w ogniu, Jerry'ego JSON Lewisa";
   song3.innerHTML = "Pierwszy wiersz kodu, Johnny'ego JavaScripta";
-// --
+  // --
   var planet = document.getElementById("redplanet");
   planet.innerHTML = "Alarm czerwony: rozpoczęto ostrzał z fazerów";
   planet.setAttribute("class", "redtext");
-// --
+  // --
   var scoop = document.getElementById("raspberry");
   var altText = scoop.getAttribute("alt");
   if (altText == null) {
@@ -1143,8 +1149,11 @@ var test3 = true;
 var test4 = {};
 var test5 = [];
 var test6;
-var test7 = {"abcdef": 123};
+var test7 = {
+  "abcdef": 123
+};
 var test8 = ["abcdef", 123];
+
 function test9() {
   return "abcdef"
 }
@@ -1161,7 +1170,7 @@ console.log(typeof test8);
 console.log(typeof test9);
 console.log(typeof test10);
 
-var ay = 0/0;
+var ay = 0 / 0;
 var by = "food" * 1000;
 var cy = Math.sqrt(-9);
 
@@ -1288,25 +1297,25 @@ var fiat2 = {
   model: "500"
 }
 
- var lot = [chevy1, taxi, fiat1, fiat2];
- var loc1 = findCarInLot(fiat2);
- var loc2 = findCarInLot(taxi);
- var loc3 = findCarInLot(chevy1);
- var loc4 = findCarInLot(fiat1);
- console.log(loc1);
- console.log(loc2);
- console.log(loc3);
- console.log(loc4);
+var lot = [chevy1, taxi, fiat1, fiat2];
+var loc1 = findCarInLot(fiat2);
+var loc2 = findCarInLot(taxi);
+var loc3 = findCarInLot(chevy1);
+var loc4 = findCarInLot(fiat1);
+console.log(loc1);
+console.log(loc2);
+console.log(loc3);
+console.log(loc4);
 
- //-------------------------------------
+//-------------------------------------
 
- //var ma wartość undefined
- var testThis;
- if (testThis) {
-   console.log("Zadeklarowana zmienna bez wartości jest TRUE");
- } else {
-   console.log("Zadeklarowana zmienna bez wartości jest FALSE");
- }
+//var ma wartość undefined
+var testThis;
+if (testThis) {
+  console.log("Zadeklarowana zmienna bez wartości jest TRUE");
+} else {
+  console.log("Zadeklarowana zmienna bez wartości jest FALSE");
+}
 
 //null
 var element = document.getElementById("elementThatDoesntExists");
@@ -1365,7 +1374,7 @@ if ([]) {
 }
 
 //Wyrażenie liczbowe
-if ((2 > 3 || 3 > 1 || 5 > 3) && (4 > 3 || 5 >=3)  ) {
+if ((2 > 3 || 3 > 1 || 5 > 3) && (4 > 3 || 5 >= 3)) {
   console.log("Liczba 1 przyjmuje wartość TRUE");
 } else {
   console.log("Liczba 1 przyjmuje wartość FALSE");
@@ -1455,8 +1464,8 @@ var fact = "To liczba pierwsza";
 var songName = phone + "/" + names;
 var indexs = phone.indexOf("-");
 
-if (fact.substring(10,18) === "pierwsza") {
-    console.log(fact.substring(10,18));
+if (fact.substring(10, 18) === "pierwsza") {
+  console.log(fact.substring(10, 18));
 }
 
 //-----------------------
@@ -1480,7 +1489,7 @@ console.log("Słowo pies zapisano zaczynając od indexu " + indexofDog);
 
 //metoda substpring
 var data1 = "imię|telefon|adres";
-var data1Val = data1.substring(5,12);
+var data1Val = data1.substring(5, 12);
 var data1Val2 = data1.substring(13);
 console.log("Wybrany fragment to " + data1Val);
 console.log("Wybrany fragment to " + data1Val2);
@@ -1492,7 +1501,7 @@ console.log("Oto tablica z podzielony łańcuchem: " + vals);
 
 //metoda slice
 var textToSlice = "Oto przykładowy łańcuch na którym uzyjemy metody slice";
-var sliceMethod = textToSlice.slice(4,9);
+var sliceMethod = textToSlice.slice(4, 9);
 console.log(sliceMethod);
 
 //------------------------------------
@@ -1502,7 +1511,7 @@ function validate(phoneNumber) {
   if (phoneNumber.length !== 8) {
     return false;
   }
-  for (i=0; i < phoneNumber.length; i++) {
+  for (i = 0; i < phoneNumber.length; i++) {
     if (i === 3) {
       if (phoneNumber.charAt(i) !== "-") {
         return false;
@@ -1517,7 +1526,7 @@ function validate2(phoneNumber) {
   if (phoneNumber.length !== 8) {
     return false;
   }
-  var first = phoneNumber.substring(0,3);
+  var first = phoneNumber.substring(0, 3);
   var second = phoneNumber.substring(4);
   if (phoneNumber.charAt(3) !== "-" || isNaN(first) || isNaN(second)) {
     return false;
@@ -1528,7 +1537,9 @@ function validate2(phoneNumber) {
 
 function Duck(sound) {
   this.sound = sound;
-  this.quack = function() {console.log(this.sound);}
+  this.quack = function () {
+    console.log(this.sound);
+  }
 }
 
 var toy = new Duck("kwa kwa");
@@ -1548,7 +1559,7 @@ window.onload = pageLoaderHandler;
 //------------------------------------
 
 function quacks(num) {
-  for (var i=0; i < num; i++) {
+  for (var i = 0; i < num; i++) {
     console.log("kwak");
     console.log(num);
   }
@@ -1557,8 +1568,8 @@ quacks(6);
 quacks(3);
 
 
-var fly = function(num) {
-  for (var i = 0; i<num; i++) {
+var fly = function (num) {
+  for (var i = 0; i < num; i++) {
     console.log("latam!");
   }
 }
@@ -1573,25 +1584,42 @@ var midiInterface;
 
 function play(sequence) {}
 
-var pause = function() {
+var pause = function () {
   stop();
 }
 
 function stop() {}
+
 function createMidi() {}
 
 if (midi) {
-  midiInterface = function(type) {
-  };
+  midiInterface = function (type) {};
 }
 
 
 //-------------------------------------------
 
-var passengers = [{name: "Janka Pętlicka", paid: true, ticket: "turystyczna"},
-                  {name: "Dr Zlatan", paid: true, ticket: "premium"}, 
-                  {name: "Stefania Właściwa", paid: false, ticket: "pierwsza klasa"},
-                  {name: "Janek funkcyjniak", paid: true, ticket: "turystyczna"}];
+var passengers = [{
+    name: "Janka Pętlicka",
+    paid: true,
+    ticket: "turystyczna"
+  },
+  {
+    name: "Dr Zlatan",
+    paid: true,
+    ticket: "premium"
+  },
+  {
+    name: "Stefania Właściwa",
+    paid: false,
+    ticket: "pierwsza klasa"
+  },
+  {
+    name: "Janek funkcyjniak",
+    paid: true,
+    ticket: "turystyczna"
+  }
+];
 
 console.log(passengers);
 
@@ -1612,7 +1640,7 @@ function checkNoFly(passenger) {
       return false;
     }
   }
-  return true; 
+  return true;
 }
 
 var sth2 = checkNoFly(passengers);
@@ -1652,7 +1680,7 @@ function procesPassengers(passengers, testFunction) {
 
 function printPassengersList(passenger) {
   var message = passenger.name;
-  
+
   if (passenger.paid === true) {
     message = message + " :zapłacił(a)";
   } else {
@@ -1680,18 +1708,18 @@ function createDrinkOrder(passenger) {
   var orderFunction;
 
   if (passenger.ticket === "pierwsza klasa") {
-    orderFunction = function() {
+    orderFunction = function () {
       alert("Podać koktajl czy wino?")
     }
   } else if (passenger.ticket === "turystyczna") {
-    orderFunction = function() {
+    orderFunction = function () {
       alert("Podać colę czy wodę?")
-    } 
-  } else {
-      orderFunction = function() {
-        alert("Podać colę, wodę czy wino?")
-      }
     }
+  } else {
+    orderFunction = function () {
+      alert("Podać colę, wodę czy wino?")
+    }
+  }
   return orderFunction;
 }
 
@@ -1699,15 +1727,15 @@ function getDinnerOrderFunction(passenger) {
   var orderFoodFunction;
 
   if (passenger.ticket === "pierwsza klasa") {
-    orderFoodFunction = function() {
+    orderFoodFunction = function () {
       alert("Podać kurczaka czy makaron")
-    }    
+    }
   } else if (passenger.ticket === "premium") {
-    orderFoodFunction = function() {
+    orderFoodFunction = function () {
       alert("Podać przekąski czy talerz serów?")
     }
   } else {
-    orderFoodFunction = function() {
+    orderFoodFunction = function () {
       alert("Podać orzeszki czy precelki?")
     }
   }
@@ -1722,39 +1750,79 @@ function servePassengers(passengers) {
 // servePassengers(passengers); 
 //---------------------------------------
 
-var products = [  {name: "Grejpfrut", calories: 170, color: "czerwony", sold: 8200},
-                  {name: "Pomarańcza", calories: 160, color: "pomarańczowy", sold: 12101},
-                  {name: "Cola", calories: 210, color: "karmelowy", sold: 25412},
-                  {name: "Cola dietetyczna", calories: 0, color: "karmelowy", sold: 43922},
-                  {name: "Cytryna", calories: 200, color: "bezbarwny", sold: 14983},
-                  {name: "Malina", calories: 180, color: "różowy", sold: 9427},
-                  {name: "Piwo korzenne", calories: 200, color: "karmelowy", sold: 9909},
-                  {name: "Woda", calories: 0, color: "bezbarwny", sold: 62123}
-                ];
- 
-function compareSold( colaA, colaB ) {
-   if (colaA.sold > colaB.sold) {
-     return 1;
-   } else if ( colaA.sold === colaB.sold ) {
-     return 0;
-   } else {
-     return -1;
-   }
- }
+var products = [{
+    name: "Grejpfrut",
+    calories: 170,
+    color: "czerwony",
+    sold: 8200
+  },
+  {
+    name: "Pomarańcza",
+    calories: 160,
+    color: "pomarańczowy",
+    sold: 12101
+  },
+  {
+    name: "Cola",
+    calories: 210,
+    color: "karmelowy",
+    sold: 25412
+  },
+  {
+    name: "Cola dietetyczna",
+    calories: 0,
+    color: "karmelowy",
+    sold: 43922
+  },
+  {
+    name: "Cytryna",
+    calories: 200,
+    color: "bezbarwny",
+    sold: 14983
+  },
+  {
+    name: "Malina",
+    calories: 180,
+    color: "różowy",
+    sold: 9427
+  },
+  {
+    name: "Piwo korzenne",
+    calories: 200,
+    color: "karmelowy",
+    sold: 9909
+  },
+  {
+    name: "Woda",
+    calories: 0,
+    color: "bezbarwny",
+    sold: 62123
+  }
+];
+
+function compareSold(colaA, colaB) {
+  if (colaA.sold > colaB.sold) {
+    return 1;
+  } else if (colaA.sold === colaB.sold) {
+    return 0;
+  } else {
+    return -1;
+  }
+}
 
 console.log(products.sort(compareSold));
 
 function compareProducts(products) {
   for (var i = 0; i < products.length; i++) {
-    console.log("Nazwa: " + products[i].name + 
-   ", liczba kalorii: " + products[i].calories + ", kolor: " + products[i].color + ", liczba sprzedanych butelek: " + 
-   products[i].sold);
+    console.log("Nazwa: " + products[i].name +
+      ", liczba kalorii: " + products[i].calories + ", kolor: " + products[i].color + ", liczba sprzedanych butelek: " +
+      products[i].sold);
   }
 }
 
 compareProducts(products);
 
-function compareNames( name1, name2 ) {
+function compareNames(name1, name2) {
   if (name1.name > name2.name) {
     return 1;
   } else if (name1.name === name2.name) {
@@ -1766,10 +1834,10 @@ function compareNames( name1, name2 ) {
 
 console.log(products.sort(compareNames));
 
-function compareCalories( cal1, cal2 ) {
-  if ( cal1.calories > cal2.calories ) {
+function compareCalories(cal1, cal2) {
+  if (cal1.calories > cal2.calories) {
     return 1;
-  } else if ( cal1.calories === cal2.calories ) {
+  } else if (cal1.calories === cal2.calories) {
     return 0;
   } else {
     return -1;
@@ -1780,7 +1848,7 @@ function compareCalories( cal1, cal2 ) {
 
 // --------------------------------------------------
 function addN(n) {
-  var adder = function(x) {
+  var adder = function (x) {
     return n + x;
   }
   return adder;
@@ -1838,19 +1906,19 @@ console.log(counterTest());
 function makeCounter2() {
   var count = 100;
 
-    return {
-      increment: function() {
-        count++;
-        return count;
-      },
-      increment2: function() {
-        count = count + 2;
-        return count;
-      }
-    }; 
-  }
+  return {
+    increment: function () {
+      count++;
+      return count;
+    },
+    increment2: function () {
+      count = count + 2;
+      return count;
+    }
+  };
+}
 
- var someCounter = makeCounter2();
+var someCounter = makeCounter2();
 console.log(someCounter.increment());
 console.log(someCounter.increment2());
 console.log(someCounter.increment2());
@@ -1870,16 +1938,17 @@ console.log(multBy3(3));
 
 function makeTimer(doneMessage, n) {
 
-  setTimeout(function() {
+  setTimeout(function () {
     alert(doneMessage)
   }, n);
 
-} 
+}
 
 // makeTimer("Wszystko działa!", 2000);
 
 function makeSomeTimer(doneM, n) {
   setTimeout(handler, n)
+
   function handler() {
     alert(doneM);
   }
@@ -1888,11 +1957,11 @@ function makeSomeTimer(doneM, n) {
 // makeSomeTimer("Gtowe!", 2000);
 
 function setTimer(doneMessage, n) {
-  
-  setTimeout(function() {
+
+  setTimeout(function () {
     alert(doneMessage)
   }, n);
-  
+
   doneMessage = "BUUM"
 }
 // setTimer("Boli?", 2000);
@@ -1905,7 +1974,7 @@ function someFunction() {
 //Zmiana liczby kliknięć w DIVie bez domknięcia
 
 // var count = 0; /*count jako zmienna globalna! */
- 
+
 // window.onload = function() {
 //   var button = document.getElementById("clickme");
 //   button.onclick = handleclick();
@@ -1960,29 +2029,29 @@ var fido = {
   weight: 20
 }
 
-function Dog (name, breed, weight) {
-  this.name = name;
-  this.breed = breed;
-  this.weight = weight;
-  this.bark = function() {
-    if (this.weight > 15) {
-      // alert(this.name + " szczeka hau hau")
-    } else {
-      // alert(this.name + " szczeka hiauuuuuu");
-    }
-  }
-}
+// function Dog(name, breed, weight) {
+//   this.name = name;
+//   this.breed = breed;
+//   this.weight = weight;
+//   this.bark = function () {
+//     if (this.weight > 15) {
+//       // alert(this.name + " szczeka hau hau")
+//     } else {
+//       // alert(this.name + " szczeka hiauuuuuu");
+//     }
+//   }
+// }
 
-// var fido = new Dog("Maksio", "Owczarek", 5);
-var fluffy = new Dog("Dino", "Pudel", 16);
-var spot = new Dog("Kieł", "chiuaua", 4);
-var dogs = [meow, fido, fluffy, spot, whiskers];
+// // var fido = new Dog("Maksio", "Owczarek", 5);
+// var fluffy = new Dog("Dino", "Pudel", 16);
+// var spot = new Dog("Kieł", "chiuaua", 4);
+// var dogs = [meow, fido, fluffy, spot, whiskers];
 
-for (var i = 0; i < dogs.length; i++) {
-  if (dogCatcher(dogs[i])) {
-    console.log(dogs[i].name + " to pies!");
-  }
-}
+// for (var i = 0; i < dogs.length; i++) {
+//   if (dogCatcher(dogs[i])) {
+//     console.log(dogs[i].name + " to pies!");
+//   }
+// }
 
 // for (var i = 0; i < dogs.length; i++) {
 //   var size = "mały";
@@ -2027,17 +2096,17 @@ console.log(superFactorB);
 function Coffee(roast, ounces) {
   this.roast = roast;
   this.ounces = ounces;
-  this.getSize = function() {
-    
+  this.getSize = function () {
+
     if (this.ounces === 250) {
       return "mała";
     } else if (this.ounces === 375) {
       return "średnia";
     } else if (this.ounces === 500) {
-      return "duża";      
+      return "duża";
     }
   };
-  this.toString = function() {
+  this.toString = function () {
     return "Twoje zamówienie: " + this.getSize() + " " + this.roast + ".";
   };
 }
@@ -2104,29 +2173,30 @@ var fiatParams = {
   convertible: false,
   milleage: 88000
 }
-  
+
 var cadi = new Car(cadiParams);
 var ferrari = new Car(ferrariParams);
 var chevy = new Car(chevyParams);
 var taxi = new Car(taxiParams);
 var fiat = new Car(fiatParams);
 
-function Car (params) {
+function Car(params) {
   this.make = params.make;
   this.model = params.model;
   this.year = params.year;
   this.color = params.color;
-  this.passengers = params.passengers; 
+  this.passengers = params.passengers;
   this.convertible = params.convertible;
   this.milleage = params.milleage;
   this.started = false;
-  this.start = function() {
+
+  this.start = function () {
     this.started = true;
   };
-  this.stop = function() {
+  this.stop = function () {
     this.started = false;
   };
-  this.drive = function() {
+  this.drive = function () {
     if (this.started) {
       console.log(this.make + " " + this.model + " robi bruum");
       this.started = false;
@@ -2152,7 +2222,7 @@ for (var i = 0; i < cars.length; i++) {
   cars[i].stop();
 }
 
-var limoParams = { 
+var limoParams = {
   make: "SieMoCorp",
   model: "limosine",
   year: 1983,
@@ -2194,9 +2264,89 @@ console.log(someDateTimeString);
 console.log(someDateDateString);
 console.log(someDateYear);
 console.log(someDateTime);
-console.log(someDateDay)
+console.log(someDateDay);
+
+var emptyArray = new Array(3);
+emptyArray[0] = 1;
+emptyArray[1] = 2;
+emptyArray[2] = 3;
+emptyArray[3] = 4;
+console.log(emptyArray);
+
+emptyArray.reverse();
+emptyArray.shift();
+emptyArray.pop();
+emptyArray.unshift(11);
+emptyArray.push(3);
+
+var aString = emptyArray.join(".");
+console.log(aString);
 
 
+// -----------------------------------------------------
+//Dodawanie do localStorage danych
+
+localStorage.setItem('myElement', 'Wyświetle wartość!');
+console.log(localStorage.getItem('myElement')); //Przykładowa wartość
+
+//Usuwanie danych z localStorage;
+localStorage.removeItem('myElement');
+console.log(localStorage.getItem('myElement'));
+
+//zmiana danych tekstowych na obiety JSON.stringify JSON.parse
+
+const someData = {
+    'one': 1,
+    'two': 2,
+    'three': 3
+}
+
+localStorage.setItem('myElement', JSON.stringify(someData));
+
+const retrivedObject = localStorage.getItem('myElement');
+console.log(JSON.parse(retrivedObject));
+// localStorage.setItem('')
+
+//Prototypy
+
+function Dog(name, breed, weight) {
+  this.name = name;
+  this.breed = breed;
+  this.weight - weight;
+}
+
+Dog.prototype.species = "Psowate";
+
+Dog.prototype.bark = function () {
+  if (this.weight > 10) {
+    console.log(this.name + " hauuuuu");
+  } else {
+    console.log(this.name + " hiaaaaaaau");
+  }
+};
+
+Dog.prototype.run = function () {
+  console.log("Biega!");
+};
+Dog.prototype.wag = function () {
+  console.log("Merda ogonem!")
+}
+
+var fido = new Dog("Burek", "mieszaniec", 20);
+var fluffy = new Dog("Dino", "pudel", 16);
+var spot = new Dog("Kieł", "chiuaua", 4);
+
+fido.bark();
+fido.run();
+fido.wag();
+
+fluffy.bark();
+fluffy.run();
+fluffy.wag();
+
+spot.bark();
+spot.run();
+spot.wag();
 
 
 
