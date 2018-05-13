@@ -2348,6 +2348,130 @@ spot.bark();
 spot.run();
 spot.wag();
 
+spot.bark = function() {
+  console.log(this.name + " szczeka HAU HUA HUA");
+};
+
+spot.bark();
+spot.run();
+spot.wag();
+
+// ---------------------------------------------------
+
+function Robot(name, year, owner) {
+  this.name = name;
+  this.year = year;
+  this.owner = owner;
+}
+
+Robot.prototype.maker = "Stwórca";
+
+Robot.prototype.speak = function(){
+  if (this.year > 10) {
+    console.log("duże bydle")
+  } else {
+    console.log("małe bydle")
+  }
+};
+
+Robot.prototype.makeCoffe = function() {
+  console.log("robię kawe!")
+};
+
+Robot.prototype.blinkLights = function() {
+  console.log("mrygam! chyba")
+}
+
+Robot.prototype.cleanHouse = function() {
+  console.log("i'm cleaning house");s
+}
+var robby = new Robot("walle", 2255, "pixar")
+var rosie = new Robot("eva", 2155, "fox")
+
+robby.makeCoffe();
+robby.blinkLights();
+rosie.cleanHouse();
+
+var barnaby = new Dog("Barnaba", "basset", 27)
+
+Dog.prototype.sit = false;
+Dog.prototype.sit = function() {
+  if (this.sit) {
+    console.log(this.name + " wykonał siad") 
+  } else {
+    console.log(this.name + " już siedzi")
+    this.sit = true;
+    }
+  }
 
 
+barnaby.sit();
+// --------------------------------------------------
+// Game
+
+function Game() {
+  this.level = 0;
+}
+
+Game.prototype.play = function() {
+  //gracz bawi się grą
+  this.level++;
+  console.log("WItamy na poziomie " + this.level + " .");
+  this.unlock();
+}
+
+Game.prototype.unlock = function() {
+  if (this.level === 42) {
+    Robot.prototype.deployLaser = function() {
+      console.log(this.name + " strzela do Ciebie z lasera");
+    }
+  }
+};
+
+function Robot(name, year, owner) {
+  this.name = name;
+  this.year = year;
+  this.owner = owner;
+}
+
+var game = new Game();
+var robby = new Robot("Robik", 1956, "Dr. Morbius");
+var rosie = new Robot("Robusia", 1962, "Grzegorz Jetson");
+
+while (game.level < 42) {
+  game.play();
+}
+
+robby.deployLaser();
+rosie.deployLaser();
+
+// -----------------------------
+
+function Robot(name, year, owner) {
+  this.name = name;
+  this.year = year;
+  this.owner = owner;
+}
+
+Robot.prototype.maker = "Ob.Fa.Ro";
+Robot.prototype.errorMessage = "Wszystkie systemy sprawne";
+Robot.prototype.reportError = function() {
+  console.log(this.name + " mówi " + this.errorMessage)
+};
+
+Robot.prototype.spillWater = function() {
+  this.errorMessage = " Chyba mam zwarcie ";
+}
+
+var robby = new Robot("Robik", 1999, "Dr.Strange");
+var rosie = new Robot("Robusia", 2000, "Grzegorz Jetson");
+
+rosie.reportError();
+robby.reportError();
+robby.spillWater();
+rosie.reportError();
+robby.reportError();
+
+console.log(robby.hasOwnProperty("errorMessage"));
+console.log(rosie.hasOwnProperty("errorMessage"));
 
