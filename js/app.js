@@ -1,5 +1,5 @@
 // JS examples from book(Rusz głową! Programowanie w javaScript).
-require('../css/main.css'); //DO WEBSERVERA
+// require('../css/main.css'); //DO WEBSERVERA
 
 setTimeout(wakeUpUser, 5000);
 
@@ -2308,54 +2308,6 @@ console.log(JSON.parse(retrivedObject));
 // localStorage.setItem('')
 
 //Prototypy
-
-function Dog(name, breed, weight) {
-  this.name = name;
-  this.breed = breed;
-  this.weight - weight;
-}
-
-Dog.prototype.species = "Psowate";
-
-Dog.prototype.bark = function () {
-  if (this.weight > 10) {
-    console.log(this.name + " hauuuuu");
-  } else {
-    console.log(this.name + " hiaaaaaaau");
-  }
-};
-
-Dog.prototype.run = function () {
-  console.log("Biega!");
-};
-Dog.prototype.wag = function () {
-  console.log("Merda ogonem!")
-}
-
-var fido = new Dog("Burek", "mieszaniec", 20);
-var fluffy = new Dog("Dino", "pudel", 16);
-var spot = new Dog("Kieł", "chiuaua", 4);
-
-fido.bark();
-fido.run();
-fido.wag();
-
-fluffy.bark();
-fluffy.run();
-fluffy.wag();
-
-spot.bark();
-spot.run();
-spot.wag();
-
-spot.bark = function() {
-  console.log(this.name + " szczeka HAU HUA HUA");
-};
-
-spot.bark();
-spot.run();
-spot.wag();
-
 // ---------------------------------------------------
 
 function Robot(name, year, owner) {
@@ -2394,18 +2346,6 @@ rosie.cleanHouse();
 
 var barnaby = new Dog("Barnaba", "basset", 27)
 
-Dog.prototype.sit = false;
-Dog.prototype.sit = function() {
-  if (this.sit) {
-    console.log(this.name + " wykonał siad") 
-  } else {
-    console.log(this.name + " już siedzi")
-    this.sit = true;
-    }
-  }
-
-
-barnaby.sit();
 // --------------------------------------------------
 // Game
 
@@ -2474,4 +2414,120 @@ robby.reportError();
 
 console.log(robby.hasOwnProperty("errorMessage"));
 console.log(rosie.hasOwnProperty("errorMessage"));
+
+function SpaceRobot(name, year, owner, homePlanet) {
+  this.name = name;
+  this.year = year;
+  this.owner = owner;
+  this.homePlanet = homePlanet;
+}
+
+SpaceRobot.prototype = new Robot();
+SpaceRobot.prototype.speak = function() {
+  console.log(this.name + " mówi: Panie, jeśli mogę coś powiedzieć");
+}
+SpaceRobot.prototype.pilot = function() {
+  console.log(this.name + " mówi: Dopalacze? czy one są ważne?");
+}
+
+var c3po = new SpaceRobot("C3PO", 1977, "Luke Skywalker", "Tatooine");
+c3po.speak();
+c3po.pilot();
+console.log("Twórcą " + c3po.name + " jest" + c3po.owner);
+
+var simon = new SpaceRobot("Simon", 1978, "Karola Diament", "Ziemia");
+simon.makeCoffe();
+simon.blinkLights();
+simon.speak();
+
+
+
+
+// ---------------------------------------------------------------------
+
+function Dog(name, breed, weight) {
+  this.name = name;
+  this.breed = breed;
+  this.weight = weight;
+}
+
+Dog.prototype.species = "Psowate";
+Dog.prototype.bark = function () {
+  if (this.weight > 10) {
+    console.log(this.name + " hauuuuu");
+  } else {
+    console.log(this.name + " hiaaaaaaau");
+  }
+};
+
+Dog.prototype.run = function () {
+  console.log("Biega!");
+};
+Dog.prototype.wag = function () {
+  console.log("Merda ogonem!")
+}
+
+var fido = new Dog("Burek", "mieszaniec", 20);
+var fluffy = new Dog("Dino", "pudel", 16);
+var spot = new Dog("Kieł", "chiuaua", 4);
+
+fido.bark();
+fido.run();
+fido.wag();
+
+fluffy.bark();
+fluffy.run();
+fluffy.wag();
+
+spot.bark();
+spot.run();
+spot.wag();
+
+spot.bark = function() {
+  console.log(this.name + " szczeka HAU HUA HUA");
+};
+
+spot.bark();
+spot.run();
+spot.wag();
+
+Dog.prototype.sit = false;
+Dog.prototype.sit = function() {
+  if (this.sit) {
+    console.log(this.name + " wykonał siad") 
+  } else {
+    console.log(this.name + " już siedzi")
+    this.sit = true;
+  }
+}
+
+function ShowDog(name, breed, weight, handler) {
+  this.name = name;
+  this.breed = breed;
+  this.weight = weight;
+  this.handler = handler;
+};
+
+ShowDog.prototype = new Dog("jakiś Morris", "jakiś terrier", 100);
+
+ShowDog.prototype.league = "Sieciowice";
+ShowDog.prototype.stack = function() {
+  console.log("stoi i uważa jak pizda w sosnach");
+};
+ShowDog.prototype.bait = function() {
+  consoloe.log("Prosi o smakołyk - jak sęp");
+};
+ShowDog.prototype.gait = function(kind) {
+  console.log("Trenuje " + kind  + ".");
+};
+ShowDog.prototype.groom = function() {
+  console.log("Czas pielęgnacji sierści");
+};
+
+var scotty = new ShowDog("Morris", "terrier szkocki", 8, "Łukasz");
+scotty.stack();
+scotty.bark();
+console.log(scotty.league);
+console.log(scotty.species);
+
 
